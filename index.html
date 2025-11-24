@@ -364,15 +364,18 @@
     });
   </script>
 
-<audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+<audio id="hover-sound" src="click-21156.mp3" preload="auto"></audio>
 
 <script>
-  const sound = document.getElementById("hoverSound");
+  // Select all project rows
   const rows = document.querySelectorAll(".row");
+
+  // Load sound
+  const sound = document.getElementById("hover-sound");
 
   rows.forEach(row => {
     row.addEventListener("mouseenter", () => {
-      sound.currentTime = 0;
+      sound.currentTime = 0;   // restart sound each time
       sound.play();
     });
   });
