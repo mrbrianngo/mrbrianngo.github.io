@@ -364,24 +364,6 @@
     });
   </script>
 
-<audio id="hover-sound" src="click-21156.mp3" preload="auto"></audio>
-
-<script>
-  // Select all project rows
-  const rows = document.querySelectorAll(".row");
-
-  // Load sound
-  const sound = document.getElementById("hover-sound");
-
-  rows.forEach(row => {
-    row.addEventListener("mouseenter", () => {
-      sound.currentTime = 0;   // restart sound each time
-      sound.play();
-    });
-  });
-</script>
-
-
 </body>
 </html>
 
