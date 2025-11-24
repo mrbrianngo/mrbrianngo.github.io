@@ -106,10 +106,26 @@
       transition: background .12s ease-out, color .12s ease-out;
     }
 
-    .row:hover {
-      background: #111;
-      color: var(--text-strong);
-    }
+.row:hover .num {
+  color: var(--highlight); /* you already have this */
+  transform: translateX(4px);
+  transition: transform 0.15s ease-out;
+}
+
+.row:hover .title {
+  transform: translateX(6px);
+  transition: transform 0.15s ease-out;
+}
+
+.row:hover .category {
+  transform: translateX(-6px);
+  transition: transform 0.15s ease-out;
+}
+
+.row:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
 
     .row:hover .num {
       color: var(--highlight);
@@ -333,5 +349,36 @@
 
     </div>
   </div>
+
+    </div> <!-- end .inner -->
+  </div> <!-- end .page -->
+
+  <!-- Fairy Dust Cursor Script -->
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      new cursoreffects.fairyDustCursor({
+        colors: ["#9a6226", "#cc8400", "#ffa500", "#eeeeee", "#aaaaaa"],
+        fairySymbol: "✦"
+      });
+    });
+  </script>
+
+<audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+
+<script>
+  const sound = document.getElementById("hoverSound");
+  const rows = document.querySelectorAll(".row");
+
+  rows.forEach(row => {
+    row.addEventListener("mouseenter", () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  });
+</script>
+
+
 </body>
 </html>
+
