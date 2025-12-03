@@ -183,6 +183,94 @@
   color: var(--highlight); 
 }
 
+/* --- MOBILE RESPONSIVENESS (Max Width: 600px) --- */
+@media (max-width: 600px) {
+    /* Adjust overall padding for mobile */
+    .page {
+        padding: 16px; 
+    }
+
+    /* Stack Top Bar elements */
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 24px;
+        gap: 8px; /* Space between the name/subtitle and the links */
+    }
+
+    /* Make the title smaller on mobile */
+    .name {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 10px; /* Make the subtitle less prominent */
+    }
+
+    /* Stack the Project/Class Row elements */
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0; /* Remove gap when stacking */
+        padding: 12px 0; /* Increase vertical padding for better touch targets */
+        border-top: 1px solid #111;
+    }
+
+    /* Remove the 'num' and 'category' from the horizontal flow */
+    .num, .category {
+        width: auto;
+        text-align: left;
+    }
+
+    /* Reduce the size of the main title */
+    .title {
+        font-size: 24px; 
+        order: 1; /* Move the title to the second position in the stack */
+        margin: 4px 0; /* Add some vertical space around the title */
+    }
+
+    /* Reorder the elements */
+    .num {
+        order: 0; /* Place the number/index first */
+        font-size: 14px;
+        color: var(--highlight); /* Highlight the index for clarity */
+    }
+
+    .category {
+        order: 2; /* Place the skills/category last */
+        font-size: 9px;
+        line-height: 1.4;
+        margin-top: 4px; /* Space above the category */
+        color: var(--text-faint); /* Keep it subtle */
+    }
+
+    /* Hide the second column header (SKILLS/Class) when stacked */
+    .section-header-bar {
+        border-bottom: none; /* Remove the bottom border on mobile */
+        margin-top: 20px;
+    }
+
+    .skills-label {
+        display: none;
+    }
+
+    .category-label {
+        border-bottom: 1px solid #111; /* Add the border back to the main label */
+        width: 100%;
+    }
+
+    /* Remove the hover scaling and shadow effect on mobile for better performance/touch */
+    .row:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .row:hover .num, .row:hover .title, .row:hover .category {
+        color: inherit; /* Reset colors on hover */
+        transform: none;
+    }
+}
+
   </style>
 
 <script>
