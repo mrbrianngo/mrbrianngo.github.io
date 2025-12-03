@@ -542,10 +542,13 @@
   <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
   <script>
     window.addEventListener("load", () => {
-      new cursoreffects.fairyDustCursor({
-        colors: ["#ff4f00", "#666666", "#ffffff", "#c0c0c0"],
-        fairySymbol: "✦"
-      });
+      // Only load cursor effect on non-touch devices
+      if (!window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+        new cursoreffects.fairyDustCursor({
+          colors: ["#ff4f00", "#666666", "#ffffff", "#c0c0c0"],
+          fairySymbol: "✦"
+        });
+      }
     });
   </script>
 
