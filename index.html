@@ -95,11 +95,12 @@
     font-size: 32px;
     line-height: 1.1; /* Tighter line spacing */
     margin-bottom: 50px;
+    margin-top: 0;
 }
 
     .row {
       display: flex;
-      align-items: baseline;
+      align-items: flex-start;
       gap: 18px;
       padding: 6px 0;
       text-decoration: none;
@@ -123,7 +124,8 @@
 .row:hover .category {
   color: var(--highlight); /* <-- ADDED LINE: Makes the category text orange */
   transform: translateX(-6px);
-  transition: transform 0.15s ease-out;
+  opacity: 1;
+  transition: transform 0.15s ease-out, opacity 0.3s ease-out, color 0.15s ease-out;
 }
 
 .row:hover {
@@ -153,7 +155,9 @@
   line-height: 1.2; 
   color: var(--text-faint);
   /* REMOVE min-width: 150px; to allow the column to shrink */
-  text-align: right; 
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 
 /* New header bar container to align PROJECTS and SKILLS */
@@ -179,8 +183,23 @@
   font-size: 14px;
   letter-spacing: 0.20em;
   margin: 0; /* Changed from 30px 0 10px; */
-  padding-bottom: 10px;
+  padding-bottom: 0;
   color: var(--highlight); 
+}
+
+/* Adjust section header bar to align with title top */
+.section-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 6px;
+}
+
+.skills-label {
+  padding-bottom: 6px;
 }
 
 /* --- MOBILE RESPONSIVENESS (Max Width: 600px) --- */
