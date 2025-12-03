@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brian Ngo — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text-main: #c0c0c0;
+      --text-strong: #ffffff;
+      --text-faint: #666666;
+      --highlight: #ff4f00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: "Space Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      -webkit-font-smoothing: antialiased;
+      cursor: default;
+    }
+
+    .page {
+      height: 100vh;
+      padding: 24px 24px 40px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .inner {
+      margin: 0 auto;
+      max-width: 1400px; /* Added max-width to keep lines readable on huge screens */
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    .name {
+      color: var(--text-strong);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-top: 4px;
+    }
+
+    .top-right a {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      margin-left: 20px;
+    }
+
+    .top-right a:hover {
+      border-color: var(--text-main);
+    }
+
+    .alert-box {
+      display: inline-block;
+      background: var(--highlight);
+      color: #000;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      margin-left: 20px;
+    }
+
+    /* SECTION HEADERS */
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 10px;
+    }
+
+    .category-label, .skills-label {
+      font-size: 14px;
+      letter-spacing: 0.20em;
+      color: var(--highlight); 
+      font-weight: 700;
+    }
+
+    /* LIST */
+    .list {
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+
+    .row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 24px 0; /* Increased padding for better separation */
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid #111;
+      transition: opacity 0.2s;
+      position: relative;
+    }
+
+    /* Dim other rows when hovering one */
+    .list:hover .row {
+      opacity: 0.3;
+    }
+    .list:hover .row:hover {
+      opacity: 1;
+      transform: translateX(10px); /* Subtle shift */
+      transition: transform 0.2s ease-out, opacity 0.2s;
+    }
+
+    .row:hover .num, .row:hover .title {
+      color: var(--highlight);
+    }
+
+    .num {
+      width: 50px;
+      font-size: 14px;
+      color: var(--text-faint);
+      padding-top: 8px; /* Align with title baseline roughly */
+    }
+
+    .center-content {
+      flex: 1;
+      padding-right: 300px; /* Space for the right column */
+    }
+
+    .title {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--text-strong);
+    }
+
+    /* THE "7 WORDS OR LESS" DESCRIPTION */
+    .short-desc {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-transform: none; /* easier to read sentence case */
+      font-family: "Space Mono", monospace;
+      max-width: 600px;
+    }
+
+    .category {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      line-height: 1.4; 
+      color: var(--text-faint);
+      text-align: right;
+      width: 250px; /* Fixed width for alignment */
+      flex-shrink: 0;
+    }
+
+    /* HOVER REVEAL IMAGE CONTAINER */
+    .hover-reveal {
+      position: fixed;
+      width: 300px;
+      height: 200px;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+      transition: opacity 0.2s, transform 0.2s;
+      overflow: hidden;
+      border: 1px solid var(--highlight);
+      background: #000;
+      display: none; /* Hidden by default, JS enables it */
+    }
+
+    .hover-reveal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .row:hover ~ .hover-reveal, 
+    .hover-reveal.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media (max-width: 800px) {
+      .center-content { padding-right: 0; }
+      .category { display: none; } /* Hide skills list on mobile to save space/time */
+      .section-header-bar .skills-label { display: none; }
+      .short-desc { display: block; margin-top: 5px; }
+      .hover-reveal { display: none !important; } /* No hover images on mobile */
+      
+      .list:hover .row { opacity: 1; } /* Remove dimming effect */
+      .list:hover .row:hover { transform: none; }
+      
+      .row { flex-wrap: wrap; }
+      .title { font-size: 24px; }
+      .num { display: none; }
+    }
+  </style>
+
+  <script>
+    // Auto Numbering
+    document.addEventListener("DOMContentLoaded", () => {
+      const lists = document.querySelectorAll(".list");
+      lists.forEach(list => {
+        const rows = list.querySelectorAll(".row");
+        rows.forEach((row, index) => {
+          const numDiv = row.querySelector(".num");
+          if(numDiv) numDiv.textContent = "#" + String(index + 1).padStart(2, "0");
+        });
+      });
+    });
+
+    // Hover Image Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      // Create the reveal container
+      const revealDiv = document.createElement('div');
+      revealDiv.className = 'hover-reveal';
+      const revealImg = document.createElement('img');
+      revealDiv.appendChild(revealImg);
+      document.body.appendChild(revealDiv);
+
+      const rows = document.querySelectorAll('.row[data-image]');
+      const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+      if (!isTouch) {
+        revealDiv.style.display = 'block'; // Only enable on desktop
+
+        rows.forEach(row => {
+          row.addEventListener('mouseenter', () => {
+            const imgUrl = row.getAttribute('data-image');
+            if (imgUrl) {
+              revealImg.src = imgUrl;
+              revealDiv.classList.add('active');
+            }
+          });
+
+          row.addEventListener('mouseleave', () => {
+            revealDiv.classList.remove('active');
+          });
+
+          row.addEventListener('mousemove', (e) => {
+            // Move image near cursor but slightly offset
+            revealDiv.style.left = e.clientX + 'px';
+            revealDiv.style.top = e.clientY + 'px';
+          });
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+<div class="page">
+  <div class="inner">
+
+    <div class="top-bar">
+      <div>
+        <div class="name">Brian Ngo</div>
+        <div class="subtitle">M.S. Mechanical Engineering, UCSD '27 / B.S. Biomedical Engineering, UCI '25</div>
+      </div>
+      <div class="top-right">
+        <a href="mailto:b3ngo@ucsd.edu">Email↗</a>
+        <a href="https://www.linkedin.com/in/brianpngo/" target="_blank" rel="noreferrer">LinkedIn↗</a>
+        <div class="alert-box">PORTFOLIO</div>
+      </div>
+    </div>
+
+    <div class="section-header-bar">
+      <div class="category-label">PROJECTS</div>
+      <div class="skills-label">TOOLS & SKILLS</div>
+    </div>
+
+    <div class="list">
+
+      <a class="row" href="https://drive.google.com/drive/folders/1zMFf3CKY7qSlKvnvTc6WBVQ4fObtqFzd?usp=drive_link" target="_blank" data-image="path/to/your/image1.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Prismatic Loupes Study</div>
+          <div class="short-desc">Researching ergonomic benefits in ophthalmic surgery over 6 months.</div>
+        </div>
+        <div class="category">BIOMECHANICAL ANALYSIS<br>CLINICAL TRIALS<br>SCIENTIFIC AUTHORSHIP</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1MhL5jpW1UGU4faFZiqHS0gHw-TAyQk5x?usp=drive_link" target="_blank" data-image="path/to/your/image2.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Alcount</div>
+          <div class="short-desc">Senior design project automating cell counting using computer vision.</div>
+        </div>
+        <div class="category">YOLOv5 / COMPUTER VISION<br>HARDWARE PROTOTYPING</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1a9uhmMNLvWWMq9y2TT806XHhvEjtz2wF?usp=drive_link" target="_blank" data-image="path/to/your/image3.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Eye Muscle Hook</div>
+          <div class="short-desc">Designing surgical instrumentation with strain gauges for precise measurement.</div>
+        </div>
+        <div class="category">CAD / FEA<br>STRAIN GAUGES<br>MACHINING</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1R7aMJixxrdDAAGtzM6uXuWS_g4zI48f_?usp=drive_link" target="_blank" data-image="path/to/your/image4.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Tummy Time</div>
+          <div class="short-desc">Developed custom NICU mattress for CHOC Hospital over 9 months.</div>
+        </div>
+        <div class="category">USER-CENTERED CAD<br>MANUFACTURING<br>CLINICAL FEEDBACK</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1g2Dl7UW3wUab5eKTv_mbmX1XaOVd-TxT?usp=drive_link" target="_blank" data-image="path/to/your/image5.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Be My Anesthesiologist</div>
+          <div class="short-desc">AI-driven servo control system for real-time medical monitoring.</div>
+        </div>
+        <div class="category">REAL-TIME MONITORING<br>SERVO CONTROL<br>AI SUPPORT</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1lU39qNHCWZtmaR1HMAqOgToDWHEf5xiz?usp=drive_link" target="_blank" data-image="path/to/your/image6.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">PolyVAD</div>
+          <div class="short-desc">Led multidisciplinary team in cardiovascular device competition.</div>
+        </div>
+        <div class="category">TEAM LEADERSHIP<br>INDUCTIVE CHARGING<br>DEVICE DESIGN</div>
+      </a>
+
+    </div>
+
+    <div class="section-header-bar">
+      <div class="category-label">RELEVANT COURSEWORK</div>
+      <div class="skills-label">CODE</div>
+    </div>
+    
+    <div class="list">
+      <a class="row" href="#" style="pointer-events: none;">
+        <div class="num">#01</div>
+        <div class="center-content">
+          <div class="title">Biomedical Core</div>
+          <div class="short-desc">Biomechanics, Biomaterials, Sensory Motor Systems, Quantitative Physiology.</div>
+        </div>
+        <div class="category">UCI BME SERIES</div>
+      </a>
+      <a class="row" href="#" style="pointer-events: none;">
+        <div class="num">#02</div>
+        <div class="center-content">
+          <div class="title">Lab & Tech</div>
+          <div class="short-desc">Design of Bio-Electronics, Wet+Dry Lab (EEG+PCR), Gene Editing.</div>
+        </div>
+        <div class="category">UCI LAB SERIES</div>
+      </a>
+    </div>
+
+    <div class="section-header-bar">
+      <div class="category-label">CREATIVE & MEDIA</div>
+      <div class="skills-label">SKILLS</div>
+    </div>
+    <div class="list">
+
+      <a class="row" href="https://brianngo.
+      <a class="row" href="https://brianngo.notion.site/NBC-Bay-Area-Intern-Work-fb9631b714864f649ee0ec78fbc93625?pvs=74" target="_blank" data-image="path/to/nbc_image.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">NBC Bay Area</div>
+          <div class="short-desc">Investigative reporting and data analysis for major news outlet.</div>
+        </div>
+        <div class="category">INVESTIGATIVE REPORTING<br>DATA ANALYSIS</div>
+      </a>
+
+      <a class="row" href="https://drive.google.com/drive/folders/1_iFu2yluwNjdiFi7GuPlhlLFJVB4wi3u?usp=drive_link" target="_blank" data-image="path/to/graphic_design.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">Miss Me When I'm Gone</div>
+          <div class="short-desc">Visual identity and graphic design experimentation.</div>
+        </div>
+        <div class="category">GRAPHIC DESIGN</div>
+      </a>
+
+      <a class="row" href="https://medium.com/@brianpngo" target="_blank" data-image="path/to/medium_image.jpg">
+        <div class="num"></div>
+        <div class="center-content">
+          <div class="title">The Broca</div>
+          <div class="short-desc">Journalistic writing and content strategy blog.</div>
+        </div>
+        <div class="category">WRITING & STRATEGY</div>
+      </a>
+
+    </div> </div> </div> <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    // Only load fairy dust on non-touch devices
+    if (!window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+      new cursoreffects.fairyDustCursor({
+        colors: ["#ff4f00", "#666666", "#ffffff", "#c0c0c0"],
+        fairySymbol: "✦"
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
