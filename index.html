@@ -23,7 +23,7 @@
     }
 
     body {
-      background: radial-gradient(ellipse at bottom, #DAE0ED 0%, #000020 30%);
+      background: radial-gradient(circle at center, #DAE0ED 0%, #000020 30%);
       color: var(--text-main);
       font-family: "Space Mono", monospace;
       text-transform: uppercase;
@@ -135,7 +135,15 @@
 
     .subtitle {
       font-size: 12px;
-      color: var(--text-faint);
+      color: var(--text-main); /* Make subtitle text lighter */
+      line-height: 1.8;       /* More vertical spacing between lines */
+    }
+
+    /* Make <br> inside subtitle act as spaced breaks so each point has breathing room */
+    .subtitle br {
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.8;
     }
 
     .top-right a {
@@ -475,7 +483,9 @@
       <div class="top-bar">
         <div>
           <div class="name">Brian Ngo</div>
-          <div class="subtitle">M.S. Mechanical Engineering, UCSD '27<br>B.S. Biomedical Engineering, UCI '25</div>
+          <div class="subtitle">I design technical products with engineering precision.<br>
+            Building with MATLAB, C++, SOLIDWORKS, AI Tools.<br>
+            Working across research, prototyping, and technical problem-solving.</div>
         </div>
         <div class="top-right">
           <a href="mailto:b3ngo@ucsd.edu">Email↗</a>
