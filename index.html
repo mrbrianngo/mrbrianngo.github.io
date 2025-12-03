@@ -261,6 +261,7 @@
         line-height: 1.4;
         margin-top: 4px; /* Space above the category */
         color: var(--text-faint); /* Keep it subtle */
+        opacity: 1; /* Always visible on mobile */
     }
 
     /* Hide the second column header (SKILLS/Class) when stacked */
@@ -287,6 +288,13 @@
     .row:hover .num, .row:hover .title, .row:hover .category {
         color: inherit; /* Reset colors on hover */
         transform: none;
+    }
+}
+
+/* Ensure categories are visible on touch devices (hover not available) */
+@media (hover: none) and (pointer: coarse) {
+    .category {
+        opacity: 1 !important;
     }
 }
 
