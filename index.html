@@ -23,7 +23,7 @@
     }
 
     body {
-      background: radial-gradient(circle at center, #DAE0ED 0%, #000020 20%);
+      background: #000a00;
       color: var(--text-main);
       font-family: "Space Mono", monospace;
       text-transform: uppercase;
@@ -386,11 +386,11 @@
     }
 }
 
-    /* Mobile: show stars over a solid dark navy / green-leaning color for atmosphere */
+    /* Mobile: show stars over a green-leaning color for atmosphere */
     @media (max-width: 600px) {
       body {
         /* Solid base color for mobile (user requested) */
-        background: #000020 !important;
+        background: #000a00 !important;
       }
 
       /* Restore star layers on mobile but tone them down for readability and performance */
@@ -484,10 +484,10 @@
         <div>
           <div class="name">Brian Ngo</div>
           <div class="subtitle">Product design · engineering<br><br>
-            MATLAB · C++ · SOLIDWORKS · AI Tools<br><br>
+            MATLAB · C++ · SOLIDWORKS<br>
             research · data analysis · technical problem-solving<br><br>
             M.S. Mechanical Engineering, UCSD '27<br>
-            B.S. Biomedical Engineering, UCI 25         
+            B.S. Biomedical Engineering, UCI '25         
           </div>
         </div>
         <div class="top-right">
@@ -691,38 +691,6 @@
 
     </div> <!-- end .inner -->
   </div> <!-- end .page -->
-
-  <!-- Fairy Dust Cursor Script (loaded only on non-touch devices) -->
-  <script>
-    window.addEventListener("load", () => {
-      // Robustly detect touch-capable devices and skip the sparkle cursor on them
-      const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 0);
-      const prefersNoHover = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
-      if (!isTouchDevice && !prefersNoHover) {
-        // Dynamically load the library only when needed to save mobile bandwidth
-        const s = document.createElement('script');
-        s.src = 'https://unpkg.com/cursor-effects@latest/dist/browser.js';
-        s.async = true;
-        s.onload = () => {
-          try {
-            if (window.cursoreffects && typeof window.cursoreffects.fairyDustCursor === 'function') {
-              new cursoreffects.fairyDustCursor({
-                colors: ["#ff4f00", "#666666", "#ffffff", "#c0c0c0"],
-                fairySymbol: "✦"
-              });
-            }
-          } catch (e) {
-            console.warn('Fairy dust cursor failed to initialize after load:', e);
-          }
-        };
-        s.onerror = () => {
-          console.warn('Failed to load cursor-effects library.');
-        };
-        document.head.appendChild(s);
-      }
-    });
-  </script>
 
 </body>
 </html>
