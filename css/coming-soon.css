@@ -1,0 +1,38 @@
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#111;background:#fff}
+
+/* Make everything visually small and add lots of whitespace */
+.wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14vh 5vw}
+.brand{margin-bottom:3.5rem}
+.logo{width:48px;height:auto}
+
+.content{max-width:640px;display:flex;flex-direction:column;align-items:center;text-align:center;row-gap:2.5rem}
+.headline{font-family:Montserrat, sans-serif;font-weight:900;letter-spacing:0.5px;margin-bottom:0;color:#000;line-height:1}
+.tagline{font-family:Montserrat, sans-serif;font-weight:700;color:#000;margin-top:0;margin-bottom:2.5rem;opacity:0.95}
+
+/* Responsive sizes (much smaller than before) */
+.headline{font-size:clamp(28px, 4vw, 48px)}
+.tagline{font-size:clamp(12px, 1.6vw, 14px)}
+
+/* Email form (compact) */
+.email-form{display:flex;gap:10px;align-items:center}
+.email-form input[type="email"]{padding:8px 10px;border:1px solid #eee;border-radius:2px;width:260px;max-width:60vw;font-size:14px}
+.email-form .btn{background:#111;color:#fff;border:none;padding:8px 12px;font-weight:700;border-radius:2px;cursor:pointer;font-size:13px}
+.email-form .btn:active{transform:translateY(1px)}
+
+.form-message{margin-top:20px;font-size:14px;color:#111}
+
+/* Small accessibility helper */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Narrow screens: stack inputs and tighten spacing */
+@media (max-width:520px){
+  .email-form{flex-direction:column;padding:0;gap:8px}
+  .email-form input{width:100%}
+  .logo{width:36px}
+  .wrap{padding:10vh 6vw}
+  .headline{font-size:28px}
+  .content{max-width:90%}
+}

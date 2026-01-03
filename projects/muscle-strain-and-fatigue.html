@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Muscle Strain and Fatigue — Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --text-main: #c0c0c0; --text-strong: #ffffff; --text-faint: #666666; --highlight: #ff4f00; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #000a00; color: var(--text-main); font-family: "Space Mono", monospace; text-transform: uppercase; letter-spacing: 0.12em; -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative; padding:36px; }
+
+    /* Parallax Star Background */
+    #stars, #stars2, #stars3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: -1;
+    }
+
+    #stars {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 1847px 1847px #FFF, 1363px 1847px #FFF, 512px 1847px #FFF, 1451px 1847px #FFF, 1777px 1847px #FFF, 1947px 1847px #FFF, 1620px 1847px #FFF, 234px 1847px #FFF, 1234px 1847px #FFF, 1500px 1847px #FFF, 1800px 1847px #FFF, 600px 1847px #FFF, 400px 1847px #FFF, 1100px 1847px #FFF, 1950px 1847px #FFF, 1950px 456px #FFF, 1234px 789px #FFF, 234px 345px #FFF, 1500px 567px #FFF, 800px 900px #FFF, 1100px 1200px #FFF, 456px 678px #FFF, 1700px 890px #FFF, 600px 1234px #FFF, 1800px 345px #FFF, 345px 1500px #FFF, 1400px 1100px #FFF, 890px 456px #FFF, 1950px 1234px #FFF, 500px 1800px #FFF;
+      animation: animStar 50s linear infinite;
+    }
+
+    #stars:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 1847px 1847px #FFF, 1363px 1847px #FFF, 512px 1847px #FFF, 1451px 1847px #FFF, 1777px 1847px #FFF, 1947px 1847px #FFF, 1620px 1847px #FFF, 234px 1847px #FFF, 1234px 1847px #FFF, 1500px 1847px #FFF, 1800px 1847px #FFF, 600px 1847px #FFF, 400px 1847px #FFF, 1100px 1847px #FFF, 1950px 1847px #FFF, 1950px 456px #FFF, 1234px 789px #FFF, 234px 345px #FFF, 1500px 567px #FFF, 800px 900px #FFF, 1100px 1200px #FFF, 456px 678px #FFF, 1700px 890px #FFF, 600px 1234px #FFF, 1800px 345px #FFF, 345px 1500px #FFF, 1400px 1100px #FFF, 890px 456px #FFF, 1950px 1234px #FFF, 500px 1800px #FFF;
+    }
+
+    #stars2 {
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: 1823px 1823px #FFF, 1345px 1823px #FFF, 523px 1823px #FFF, 1489px 1823px #FFF, 1756px 1823px #FFF, 1923px 1823px #FFF, 1678px 1823px #FFF, 289px 1823px #FFF, 1267px 1823px #FFF, 1534px 1823px #FFF, 1834px 1823px #FFF, 678px 1823px #FFF, 423px 1823px #FFF, 1134px 1823px #FFF, 1923px 1823px #FFF, 1923px 489px #FFF, 1267px 756px #FFF, 289px 378px #FFF, 1534px 534px #FFF, 834px 867px #FFF, 1134px 1167px #FFF, 489px 645px #FFF, 1734px 923px #FFF, 678px 1267px #FFF, 1834px 378px #FFF, 378px 1534px #FFF, 1434px 1134px #FFF, 923px 423px #FFF, 1923px 1267px #FFF, 534px 1834px #FFF;
+      animation: animStar 100s linear infinite;
+    }
+
+    #stars2:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: 1823px 1823px #FFF, 1345px 1823px #FFF, 523px 1823px #FFF, 1489px 1823px #FFF, 1756px 1823px #FFF, 1923px 1823px #FFF, 1678px 1823px #FFF, 289px 1823px #FFF, 1267px 1823px #FFF, 1534px 1823px #FFF, 1834px 1823px #FFF, 678px 1823px #FFF, 423px 1823px #FFF, 1134px 1823px #FFF, 1923px 1823px #FFF, 1923px 489px #FFF, 1267px 756px #FFF, 289px 378px #FFF, 1534px 534px #FFF, 834px 867px #FFF, 1134px 1167px #FFF, 489px 645px #FFF, 1734px 923px #FFF, 678px 1267px #FFF, 1834px 378px #FFF, 378px 1534px #FFF, 1434px 1134px #FFF, 923px 423px #FFF, 1923px 1267px #FFF, 534px 1834px #FFF;
+    }
+
+    #stars3 {
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: 1812px 1812px #FFF, 1334px 1812px #FFF, 534px 1812px #FFF, 1478px 1812px #FFF, 1745px 1812px #FFF, 1912px 1812px #FFF, 1689px 1812px #FFF, 301px 1812px #FFF, 1278px 1812px #FFF, 1545px 1812px #FFF, 1845px 1812px #FFF, 689px 1812px #FFF, 434px 1812px #FFF, 1145px 1812px #FFF, 1912px 1812px #FFF, 1912px 501px #FFF, 1278px 745px #FFF, 301px 390px #FFF, 1545px 523px #FFF, 845px 856px #FFF, 1145px 1156px #FFF, 501px 634px #FFF, 1745px 912px #FFF, 689px 1278px #FFF, 1845px 390px #FFF, 390px 1545px #FFF, 1445px 1145px #FFF, 912px 434px #FFF, 1912px 1278px #FFF, 523px 1845px #FFF;
+      animation: animStar 150s linear infinite;
+    }
+
+    #stars3:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: 1812px 1812px #FFF, 1334px 1812px #FFF, 534px 1812px #FFF, 1478px 1812px #FFF, 1745px 1812px #FFF, 1912px 1812px #FFF, 1689px 1812px #FFF, 301px 1812px #FFF, 1278px 1812px #FFF, 1545px 1812px #FFF, 1845px 1812px #FFF, 689px 1812px #FFF, 434px 1812px #FFF, 1145px 1812px #FFF, 1912px 1812px #FFF, 1912px 501px #FFF, 1278px 745px #FFF, 301px 390px #FFF, 1545px 523px #FFF, 845px 856px #FFF, 1145px 1156px #FFF, 501px 634px #FFF, 1745px 912px #FFF, 689px 1278px #FFF, 1845px 390px #FFF, 390px 1545px #FFF, 1445px 1145px #FFF, 912px 434px #FFF, 1912px 1278px #FFF, 523px 1845px #FFF;
+    }
+
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-2000px); }
+    }
+
+    /* Minimal copy of main site styles for consistency */
+    a { color:#ff4f00; text-decoration:none }
+    a:hover { opacity: 0.8; }
+    .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
+    .category { color:var(--text-faint); white-space:pre-line }
+    .back { margin-bottom:24px; display:inline-block }
+
+    /* Content wrapper */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Description section */
+    .description {
+      line-height: 1.6;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .description h2 {
+      font-size: 16px;
+      color: var(--text-strong);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .description p {
+      margin-bottom: 12px;
+    }
+
+    /* Image gallery section */
+    .gallery {
+      margin: 48px 0;
+    }
+
+    .gallery h2 {
+      font-size: 16px;
+      color: var(--text-strong);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .gallery-item {
+      background: #0a1a0a;
+      border: 1px solid #222;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-faint);
+      font-size: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Google Drive link section */
+    .files-section {
+      margin-top: 60px;
+      padding-top: 36px;
+      border-top: 1px solid #222;
+    }
+
+    .drive-link {
+      display: inline-block;
+      padding: 20px 32px;
+      border: 2px solid #ff4f00;
+      color: #ff4f00;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      transition: all 0.3s ease;
+      margin-top: 24px;
+    }
+
+    .drive-link:hover {
+      background: #ff4f00;
+      color: #000a00;
+      box-shadow: 0 0 20px rgba(255, 79, 0, 0.3);
+    }
+
+    .files-section p {
+      color: var(--text-faint);
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .content-wrapper {
+        padding: 0 12px;
+      }
+
+      .title {
+        font-size: 18px;
+      }
+
+      .drive-link {
+        padding: 16px 24px;
+        font-size: 12px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Parallax Star Background -->
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <div class="content-wrapper">
+    <a class="back" href="../index.html">← Back</a>
+
+    <div class="title">Muscle Strain and Fatigue with Ergonomic Surgical Loupes</div>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section class="description">
+      <h2>Overview</h2>
+      <p>This research study investigates the relationship between surgical loupe ergonomics and muscle strain development during extended surgical procedures. By analyzing EMG data, posture metrics, and user feedback from surgical professionals, we developed evidence-based recommendations for ergonomic loupes that reduce fatigue and improve procedural outcomes.</p>
+
+      <h2>Approach</h2>
+      <p>We conducted a comprehensive clinical trial combining biomechanical modeling, real-time biometric measurement, and qualitative assessment. Participants performed standardized surgical tasks while wearing different loupe configurations, with continuous EMG monitoring and video analysis of neck/shoulder positioning.</p>
+
+      <h2>Key Findings</h2>
+      <p>Results demonstrated significant correlations between loupe weight distribution, user positioning, and muscle fatigue markers. Statistical analysis of EMG patterns revealed critical threshold points for fatigue onset, informing design specifications for improved surgical optics.</p>
+    </section>
+
+    <!-- IMAGE GALLERY -->
+    <section class="gallery">
+      <h2>Project Materials</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../images/image-9.jpg" alt="Experimental Setup & Equipment">
+        </div>
+        <div class="gallery-item">
+          <img src="../images/image-12.jpg" alt="EMG Data & Analysis">
+        </div>
+        <div class="gallery-item">
+          <img src="../images/image-15.jpg" alt="EMG Signal Processing">
+        </div>
+        <div class="gallery-item">
+          <img src="../images/image-17.jpg" alt="Back Region Strain Mapping">
+        </div>
+        <div class="gallery-item">
+          <img src="../images/image-14.jpg" alt="Reported Strain by Back Region">
+        </div>
+        <div class="gallery-item">
+          <img src="../images/image-11.jpg" alt="EMG Amplitude Analysis">
+        </div>
+      </div>
+    </section>
+
+    <!-- FILES SECTION -->
+    <section class="files-section">
+      <h2>Explore the Project</h2>
+      <p>Access detailed research data, analysis scripts, protocols, and supplementary materials in the project folder:</p>
+      <a class="drive-link" href="https://drive.google.com/drive/folders/1zMFf3CKY7qSlKvnvTc6WBVQ4fObtqFzd?usp=drive_link target="_blank" rel="noreferrer">
+        VIEW PROJECT FILES ↗
+      </a>
+    </section>
+
+    <hr style="margin:60px 0 36px; border-color:#222">
+    <div class="category">Scientific Methodology and Analysis
+Study Design and Ethics
+Biomechanical Modeling and Calculation
+Statistical Analysis
+Biomeasurement and EMG Setup
+Signal Processing (MATLAB)
+Posture Analysis (CV Angle)
+Psychometric and Qualitative Assessment
+Task Standardization
+Research Improvement and Critical Thinking
+clinical trials
+scientific authorship</div>
+  </div>
+</body>
+</html>
