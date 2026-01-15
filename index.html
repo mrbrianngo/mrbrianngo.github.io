@@ -280,6 +280,83 @@
       word-wrap: break-word;
     }
 
+    /* --- TABLET RESPONSIVENESS (600px to 1024px) --- */
+    @media (min-width: 601px) and (max-width: 1024px) {
+    /* Stack the Project/Class Row elements on tablet */
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0; /* Remove gap when stacking */
+        padding: 12px 0; /* Increase vertical padding for better touch targets */
+        border-top: 1px solid #111;
+    }
+
+    /* Remove the 'num' and 'category' from the horizontal flow */
+    .num, .category {
+        width: auto;  
+        text-align: left;
+        position: static;
+    }
+
+    /* Reduce the size of the main title */
+    .title {
+        font-size: 32px; 
+        order: 1; /* Move the title to the second position in the stack */
+        margin: 4px 0; /* Add some vertical space around the title */
+        padding: 0;
+        padding-right: 0;
+    }
+
+    /* Reorder the elements */
+    .num {
+        order: 0; /* Place the number/index first */
+        font-size: 14px;
+        color: var(--highlight); /* Highlight the index for clarity */
+    }
+
+    .category {
+        order: 2; /* Place the skills/category last */
+        font-size: 9px;
+        line-height: 1.4;
+        margin-top: 4px; /* Space above the category */
+        padding: 0;
+        padding-left: 0;
+        color: var(--text-faint); /* Keep it subtle */
+        opacity: 1; /* Always visible on tablet */
+        position: static;
+        right: auto;
+        top: auto;
+        max-width: none;
+        text-align: left;
+    }
+
+    /* Hide the second column header (SKILLS/Class) when stacked */
+    .section-header-bar {
+        border-bottom: none; /* Remove the bottom border on tablet */
+        margin-top: 20px;
+    }
+
+    .skills-label {
+        display: none;
+    }
+
+    .category-label {
+        border-bottom: 1px solid #111; /* Add the border back to the main label */
+        width: 100%;
+    }
+
+    /* Remove the hover scaling and shadow effect on tablet for better performance/touch */
+    .row:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .row:hover .num, .row:hover .title, .row:hover .category {
+        color: inherit; /* Reset colors on hover */
+        transform: none;
+    }
+}
+
     /* --- MOBILE RESPONSIVENESS (Max Width: 600px) --- */
     @media (max-width: 600px) {
     /* Adjust overall padding for mobile */
