@@ -11,9 +11,60 @@
     body { background: #000a00; color: var(--text-main); font-family: "Space Mono", monospace; text-transform: uppercase; padding:36px }
     a { color:#ff4f00; text-decoration:none }
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
-    .placeholder { color:var(--text-main); margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+
+    /* File Grid Styles */
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -23,7 +74,46 @@
 
   <a class="back" href="../index.html">← Back</a>
   <div class="title">Wet+Dry Lab (EEG + PCR)</div>
-  <p class="placeholder">Placeholder for lab notes, protocols, and data files.</p>
+  
+  <section style="margin-bottom: 32px;">
+    <div class="title" style="font-size: 16px;">Molecular Testing Lab (PCR)</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/BME%20170/73095898_LabA_Report.pdf" type="application/pdf">
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 48px;">PTC Testing Lab (SNP Analysis)</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/BME%20170/73095898_LabB_Report_2.pdf" type="application/pdf">
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 48px;">Lab Reports Summary</div>
+    <div class="file-grid">
+      <a href="../Portfolio/BME%20170/73095898_LabA_Report.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Molecular Testing Lab PCR testing for the presence of fecal contamination of water.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+      
+      <a href="../Portfolio/BME%20170/73095898_LabB_Report_2.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">PTC Testing Lab Single Nucleotide Polymorphism analysis of the PTC gene.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/BME%20170/73095898_EEGLab_Report.docx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Recording and Analysis of Human EEG Signals.docx</div>
+          <div class="file-meta">WORD DOCUMENT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
+
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">BME 170</div>
 </body>

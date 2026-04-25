@@ -84,6 +84,64 @@
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+
+    /* File and Media Styles */
+    .media-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +153,59 @@
   <div class="title">Tummy Time</div>
   <div class="description">A user-centered NICU device designed to support infant positioning during tummy time. Developed through iterative prototyping with clinical feedback integration from healthcare professionals. Includes comprehensive stress testing, biocompatibility assessment, and manufacturing specifications for safe use in neonatal intensive care environments.</div>
   <hr style="margin:24px 0; border-color:#222">
-  <a class="drive-link" href="https://drive.google.com/drive/folders/1R7aMJixxrdDAAGtzM6uXuWS_g4zI48f_?usp=drive_link" target="_blank" rel="noreferrer">VIEW PROJECT FILES ↗</a>
+  <!-- MEDIA & DOCUMENTS SECTION -->
+  <section class="media-section">
+    <div class="title" style="font-size: 16px;">Project Files</div>
+    <div class="file-grid">
+      <a href="../Portfolio/Tummy%20Time/tummy%20time%20proposal.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Tummy Time Proposal.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+      
+      <a href="../Portfolio/Tummy%20Time/foam%20pattern%20drawing%20v2.PDF" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Foam Pattern Drawing.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/Tummy%20Time/frame%203d%20print.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Frame 3D Print.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/Tummy%20Time/laser%20cut%20frame.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Laser Cut Frame.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/Tummy%20Time/tummy%20time%20personal%20statements.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Personal Statements.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/Tummy%20Time/Copy%20of%20tummy%20time%206_23%20updates.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Project Updates.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">USER-CENTERED COMPUTER-AIDED DESIGN
 NICU DEVICE PROTOTYPING

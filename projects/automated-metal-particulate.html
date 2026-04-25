@@ -81,13 +81,80 @@
     }
 
     a { color:#ff4f00; text-decoration:none }
-    a:hover { opacity: 0.8; }
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
-    .description { line-height: 1.6; margin: 24px 0; font-size: 14px; color: var(--text-main); }
-    .drive-link { display: inline-block; padding: 20px 32px; border: 2px solid #ff4f00; color: #ff4f00; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.12em; transition: all 0.3s ease; margin-top: 24px; }
-    .drive-link:hover { background: #ff4f00; color: #000a00; box-shadow: 0 0 20px rgba(255, 79, 0, 0.3); }
+
+    /* File and Media Styles */
+    .media-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+    }
+
+    .video-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      border: 1px solid #222;
+      margin: 24px 0;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -99,7 +166,42 @@
   <div class="title">Automated Metal Particulate Counting for Handpiece Manufacturing</div>
   <div class="description">Designed and implemented an automated computer vision system using YOLOv5 to detect and count metal particulates in dental handpiece manufacturing. The system integrates mechanical design, electronics, microcontroller programming, and image processing for real-time quality control and precision calibration.</div>
   <hr style="margin:24px 0; border-color:#222">
-  <a class="drive-link" href="https://drive.google.com/drive/folders/1MhL5jpW1UGU4faFZiqHS0gHw-TAyQk5x?usp=drive_link" target="_blank" rel="noreferrer">VIEW PROJECT FILES ↗</a>
+  <!-- MEDIA & DOCUMENTS SECTION -->
+  <section class="media-section">
+    <div class="title" style="font-size: 16px;">System Demonstration</div>
+    <div class="video-container">
+      <video controls>
+        <source src="../Portfolio/BME%20180/alconvid.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 32px;">Project Files</div>
+    <div class="file-grid">
+      <a href="../Portfolio/BME%20180/Final%20Report.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Final Report.pdf</div>
+          <div class="file-meta">PDF DOCUMENT · 13.7 MB</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+      
+      <a href="../Portfolio/BME%20180/Poster%20Template.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Poster Template.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+
+      <a href="../Portfolio/BME%20180/stagecontroller%20assembly%20v2.SLDASM" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">stagecontroller_assembly.SLDASM</div>
+          <div class="file-meta">SOLIDWORKS ASSEMBLY</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">Mechanical Design and Modeling
 Materials Science

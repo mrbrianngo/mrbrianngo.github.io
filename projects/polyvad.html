@@ -84,6 +84,64 @@
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+
+    /* File and Media Styles */
+    .media-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +153,58 @@
   <div class="title">PolyVAD</div>
   <div class="description">A polymeric ventricular assist device (VAD) project combining cardiovascular device design with innovative power delivery systems. Features inductive charging technology for untethered operation and includes comprehensive team management and professional proposal documentation for medical device development.</div>
   <hr style="margin:24px 0; border-color:#222">
-  <a class="drive-link" href="https://drive.google.com/drive/folders/1lU39qNHCWZtmaR1HMAqOgToDWHEf5xiz?usp=drive_link" target="_blank" rel="noreferrer">VIEW PROJECT FILES ↗</a>
+  <!-- MEDIA & DOCUMENTS SECTION -->
+  <section class="media-section">
+    <div class="title" style="font-size: 16px;">1. Project Abstract</div>
+    <a href="../Portfolio/PoLyVAD/Abstract.docx" download class="file-card" style="margin-bottom: 32px; background: rgba(255, 79, 0, 0.1); border-color: #ff4f00;">
+      <div class="file-info">
+        <div class="file-name" style="font-size: 16px;">Abstract.docx</div>
+        <div class="file-meta">WORD DOCUMENT (Click to Download/Open)</div>
+      </div>
+      <div class="download-btn">DOWNLOAD ABSTRACT ⬇</div>
+    </a>
+
+    <div class="title" style="font-size: 16px; margin-top: 48px;">2. Executive Summary</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/PoLyVAD/Executive%20Summary.pdf" type="application/pdf">
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 48px;">3. Pitch Deck</div>
+    <a href="../Portfolio/PoLyVAD/PoLyVAD%20Pitch%20Deck.pptx" download class="file-card" style="margin-top: 24px; background: rgba(255, 79, 0, 0.1); border-color: #ff4f00;">
+      <div class="file-info">
+        <div class="file-name" style="font-size: 16px;">PoLyVAD Pitch Deck.pptx</div>
+        <div class="file-meta">POWERPOINT (Click to Download/Open)</div>
+      </div>
+      <div class="download-btn">DOWNLOAD PITCH DECK ⬇</div>
+    </a>
+
+    <div class="title" style="font-size: 16px; margin-top: 64px;">All Project Files</div>
+    <div class="file-grid">
+      <a href="../Portfolio/PoLyVAD/Executive%20Summary.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Executive Summary.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+      
+      <a href="../Portfolio/PoLyVAD/PoLyVAD%20Pitch%20Deck.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Pitch Deck.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+
+      <a href="../Portfolio/PoLyVAD/Abstract.docx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Abstract.docx</div>
+          <div class="file-meta">WORD DOCUMENT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">TEAM MANAGEMENT
 CARDIOVASCULAR DEVICE DESIGN

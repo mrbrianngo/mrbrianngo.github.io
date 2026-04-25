@@ -84,6 +84,64 @@
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+
+    /* File and Media Styles */
+    .media-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +153,40 @@
   <div class="title">Folding Cane</div>
   <div class="description">An innovative assistive mobility device designed using SOLIDWORKS CAD software. Incorporates stress-strain simulations to optimize material selection and structural integrity while maintaining portability and ease of use for elderly and mobility-impaired individuals.</div>
   <hr style="margin:24px 0; border-color:#222">
-  <a class="drive-link" href="https://drive.google.com/drive/folders/1OCiepUgDoc642O_bWQnUn5xOciOe9eY6?usp=drive_link" target="_blank" rel="noreferrer">VIEW PROJECT FILES ↗</a>
+  <!-- MEDIA & DOCUMENTS SECTION -->
+  <section class="media-section">
+    <div class="title" style="font-size: 16px;">Final Report (Cane Assembly on Page 15)</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/BME%2060C/BME%2060C%20Final%20Report.pdf#page=15" type="application/pdf">
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 48px;">Downloadable Files</div>
+    <div class="file-grid">
+      <a href="../Portfolio/BME%2060C/Abstract.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Abstract.pdf</div>
+          <div class="file-meta">PDF DOCUMENT</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+      
+      <a href="../Portfolio/BME%2060C/BME%2060C%20Final%20Report.pdf" target="_blank" class="file-card">
+        <div class="file-info">
+          <div class="file-name">Final Report.pdf</div>
+          <div class="file-meta">PDF DOCUMENT · 53 MB</div>
+        </div>
+        <div class="download-btn">VIEW FILE ↗</div>
+      </a>
+
+      <a href="../Portfolio/BME%2060C/Copy%20of%20Copy%20of%20Phase%202%20Presentation_.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Phase 2 Presentation.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">SOLIDWORKS COMPUTER-AIDED DESIGN
 STRESS-STRAIN SIMULATION

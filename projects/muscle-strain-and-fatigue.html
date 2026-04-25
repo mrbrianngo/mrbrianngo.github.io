@@ -151,54 +151,81 @@
       object-fit: cover;
     }
 
-    /* Google Drive link section */
-    .files-section {
+    /* File and Media Styles */
+    .media-section {
       margin-top: 60px;
       padding-top: 36px;
       border-top: 1px solid #222;
     }
 
-    .drive-link {
-      display: inline-block;
-      padding: 20px 32px;
-      border: 2px solid #ff4f00;
-      color: #ff4f00;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      transition: all 0.3s ease;
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      background: #0a1a0a;
+      border: 1px solid #222;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .pdf-container embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
       margin-top: 24px;
     }
 
-    .drive-link:hover {
-      background: #ff4f00;
-      color: #000a00;
-      box-shadow: 0 0 20px rgba(255, 79, 0, 0.3);
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
     }
 
-    .files-section p {
-      color: var(--text-faint);
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
       font-size: 12px;
-      margin-bottom: 16px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     @media (max-width: 600px) {
-      .content-wrapper {
-        padding: 0 12px;
-      }
-
-      .title {
-        font-size: 18px;
-      }
-
-      .drive-link {
-        padding: 16px 24px;
-        font-size: 12px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
+      .pdf-container {
+        height: 500px;
       }
     }
   </style>
@@ -212,18 +239,32 @@
   <div class="content-wrapper">
     <a class="back" href="../index.html">← Back</a>
 
-    <div class="title">Muscle Strain and Fatigue with Ergonomic Surgical Loupes</div>
+    <div class="title">Ergonomic Benefits of Prismatic Deflection Loupes in Ophthalmic Surgery</div>
 
     <!-- PROJECT DESCRIPTION -->
     <section class="description">
-      <h2>ABSTRACT</h2>
-      
-      <p>Prismatic deflection loupes (PDLs) may offer ergonomic benefits over traditional through-the-lens (TTL) loupes and no loupe during ophthalmic microsurgery. Ten medical students performed microsuturing tasks under three conditions: PDL, TTL, and no loupes. Surface electromyography (EMG) captured bilateral upper trapezius activity, and a post-task 10-point Likert survey assessed comfort and related perceptions. Side-profile photos provided craniovertebral angles, which fed a trigonometric model to estimate cervical spine loading (lbf) per condition. Relative to TTL, PDLs reduced upper trapezius activation by 17.2% (p = 0.009); relative to no loupe, PDL reductions were significant (p = 0.004). The TTL and no-loupe conditions did not differ significantly (p = 0.42). Comfort was highest for PDLs (7.8/10 on average); perceived strain was lowest with PDLs. CV angle and estimated cervical load were strongly inversely correlated (R² = 0.94, p < 0.001). PDLs appear to reduce neck/shoulder muscle activity and cervical loading while enhancing comfort, supporting ergonomic value in ophthalmic surgery.</p>
-      
       <div style="border: 2px solid #ff4f00; padding: 20px; margin-top: 24px; background: rgba(255, 79, 0, 0.05);">
         <h3 style="font-size: 14px; color: #ff4f00; margin-bottom: 8px; font-weight: 700;">Peer-Reviewed Publications:</h3>
         <p><a href="https://www.mdpi.com/2313-576X/12/1/24" target="_blank">Ergonomic Benefits of Prismatic Deflection Loupes in Ophthalmic Surgery: A Biomechanical and Psychometric Evaluation (SAFETY, 2026)</a></p>
         <p style="color: var(--text-faint); font-size: 12px; margin-top: 12px;">One additional manuscript is currently under peer-review in a leading journal within the field of surgical ergonomics and biomedical engineering.</p>
+      </div>
+    </section>
+
+    <!-- MEDIA & DOCUMENTS SECTION -->
+    <section class="media-section">
+      <div class="title" style="font-size: 16px;">Full Publication</div>
+      <div class="pdf-container">
+        <embed src="../Portfolio/Ergonomic%20Benefits%20of%20Prismatic%20Deflection%20Loupes%20in%20Ophthalmic%20Surgery%20A%20Biomechanical%20and%20Psychometric%20Evaluation.pdf" type="application/pdf">
+      </div>
+      
+      <div class="file-grid">
+        <a href="../Portfolio/Ergonomic%20Benefits%20of%20Prismatic%20Deflection%20Loupes%20in%20Ophthalmic%20Surgery%20A%20Biomechanical%20and%20Psychometric%20Evaluation.pdf" target="_blank" class="file-card">
+          <div class="file-info">
+            <div class="file-name">Scientific Publication.pdf</div>
+            <div class="file-meta">PDF DOCUMENT · 3.1 MB</div>
+          </div>
+          <div class="download-btn">VIEW FULL FILE ↗</div>
+        </a>
       </div>
     </section>
 

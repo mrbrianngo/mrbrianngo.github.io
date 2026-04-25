@@ -84,6 +84,64 @@
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
     .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+
+    /* File and Media Styles */
+    .media-section {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #222;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .file-card {
+      background: rgba(255, 79, 0, 0.03);
+      border: 1px solid #222;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-card:hover {
+      border-color: #ff4f00;
+      background: rgba(255, 79, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .file-name {
+      color: var(--text-strong);
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .file-meta {
+      color: var(--text-faint);
+      font-size: 10px;
+    }
+
+    .download-btn {
+      color: #ff4f00;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +153,27 @@
   <div class="title">Hello Kitty Morse Code Translator</div>
   <div class="description">An interactive hardware-software project that translates text into Morse code using Arduino microcontroller and LabVIEW data acquisition. Combines embedded C++ programming with real-time signal processing and hardware integration for educational communication system.</div>
   <hr style="margin:24px 0; border-color:#222">
-  <a class="drive-link" href="https://drive.google.com/drive/folders/1OCiepUgDoc642O_bWQnUn5xOciOe9eY6?usp=drive_link" target="_blank" rel="noreferrer">VIEW PROJECT FILES ↗</a>
+  <!-- MEDIA & DOCUMENTS SECTION -->
+  <section class="media-section">
+    <div class="title" style="font-size: 16px;">Project Files</div>
+    <div class="file-grid">
+      <a href="../Portfolio/BME%2060A/Copy%20of%20Capstone%20Project%20Presentation.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Capstone Presentation.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+      
+      <a href="../Portfolio/BME%2060A/Copy%20of%20Capstone%20Project%20Pseudocode.docx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Project Pseudocode.docx</div>
+          <div class="file-meta">WORD DOCUMENT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
+    </div>
+  </section>
   <hr style="margin:24px 0; border-color:#222">
   <div class="category">ARDUINO PROGRAMMING
 HARDWARE INTEGRATION

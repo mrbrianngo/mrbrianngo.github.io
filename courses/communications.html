@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Biomechanics — Course</title>
+  <title>Communications — Course</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root { --text-main: #c0c0c0; --text-strong: #ffffff; --text-faint: #666666; --highlight: #ff4f00; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #000a00; color: var(--text-main); font-family: "Space Mono", monospace; text-transform: uppercase; letter-spacing: 0.12em; -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative; padding:36px; }
-    /* Stars (abbreviated) */
-    #stars, #stars2, #stars3 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1 }
-    @keyframes animStar { from{transform:translateY(0)}to{transform:translateY(-2000px)} }
+
+    /* Parallax Star Background */
+    #stars, #stars2, #stars3 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: -1; }
+    #stars { width:1px; height:1px; background:transparent; box-shadow: 1847px 1847px #FFF, 1363px 1847px #FFF; animation: animStar 50s linear infinite; }
+    #stars2 { width:2px; height:2px; background:transparent; box-shadow: 1823px 1823px #FFF; animation: animStar 100s linear infinite; }
+    #stars3 { width:3px; height:3px; background:transparent; box-shadow: 1812px 1812px #FFF; animation: animStar 150s linear infinite; }
+    #stars:after, #stars2:after, #stars3:after { content:" "; position:absolute; top:2000px }
+    @keyframes animStar { from { transform: translateY(0px);} to { transform: translateY(-2000px);} }
 
     a { color:#ff4f00; text-decoration:none }
     .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
-    .category { color:var(--text-faint); white-space:pre-line }
     .back { margin-bottom:24px; display:inline-block }
+    .description { line-height: 1.6; margin-bottom: 32px; font-size: 14px; }
 
     /* File Grid Styles */
     .file-grid {
@@ -77,26 +82,36 @@
   <div id="stars3"></div>
 
   <a class="back" href="../index.html">← Back</a>
-  <div class="title">Biomechanics</div>
-  
-  <section style="margin-bottom: 32px;">
-    <div class="title" style="font-size: 16px;">Nitrile vs Vinyl Mechanical Test report</div>
+  <div class="title">Communications in the Professional World</div>
+  <div class="description">A course focused on professional communication within the engineering field. Topics include technical writing, presentation skills, ethics, and collaborative project management.</div>
+
+  <section>
+    <div class="title" style="font-size: 16px;">Final Paper</div>
     <div class="pdf-container">
-      <embed src="../Portfolio/BME%20110A/Copy%20of%20BME%20110A%20report%20hw%204.pdf" type="application/pdf">
+      <embed src="../Portfolio/ENGR%20190W/GroupPaperB%20Paper.pdf" type="application/pdf">
     </div>
 
+    <div class="title" style="font-size: 16px; margin-top: 48px;">Project Deliverables</div>
     <div class="file-grid">
-      <a href="../Portfolio/BME%20110A/Copy%20of%20BME%20110A%20report%20hw%204.pdf" target="_blank" class="file-card">
+      <a href="../Portfolio/ENGR%20190W/GroupPaperB%20Paper.pdf" target="_blank" class="file-card">
         <div class="file-info">
-          <div class="file-name">Nitrile vs Vinyl Mechanical Test report.pdf</div>
+          <div class="file-name">Group Paper B.pdf</div>
           <div class="file-meta">PDF DOCUMENT</div>
         </div>
         <div class="download-btn">VIEW FILE ↗</div>
       </a>
+      
+      <a href="../Portfolio/ENGR%20190W/GroupPaperB%20Presentations.pptx" download class="file-card">
+        <div class="file-info">
+          <div class="file-name">Group Presentation.pptx</div>
+          <div class="file-meta">POWERPOINT</div>
+        </div>
+        <div class="download-btn">DOWNLOAD ⬇</div>
+      </a>
     </div>
   </section>
 
-  <hr style="margin:24px 0; border-color:#222">
-  <div class="category">BME 110A</div>
+  <hr style="margin:48px 0; border-color:#222">
+  <div style="color:var(--text-faint); font-size:11px">TECHNICAL WRITING · PRESENTATION SKILLS · PROFESSIONAL ETHICS</div>
 </body>
 </html>
