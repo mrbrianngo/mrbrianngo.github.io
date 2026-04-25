@@ -1,0 +1,693 @@
+
+ Ansys Mechanical Enterprise Academic Student      
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *         ANSYS MAPDL 2025 R1          LEGAL NOTICES          *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 Ansys, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of Ansys, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the Ansys, Inc. online documentation or the Ansys, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * Ansys, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * Ansys, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the Ansys, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the Ansys, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ 2025 R1 
+     
+ Point Releases and Patches installed:   
+     
+ Ansys Service Pack 2025 R1.64   
+ Discovery (full install) 2025 R1.64 
+ Core WB Files 2025 R1.64
+ Ansys Dynamic Reporting 2025 R1.64  
+ CFX (includes CFD-Post) 2025 R1.64  
+ Chemkin 2025 R1.64  
+ EnSight 2025 R1.64  
+ FENSAP-ICE 2025 R1.64   
+ Fluent (includes CFD-Post) 2025 R1.64   
+ Polyflow (includes CFD-Post) 2025 R1.64 
+ Forte (includes EnSight) 2025 R1.64 
+ Rocky 2025 R1.64
+ TurboGrid 2025 R1.64
+ ACIS Geometry Interface 2025 R1.64  
+ AutoCAD Geometry Interface 2025 R1.64   
+ Catia, Version 4 Geometry Interface 2025 R1.64  
+ Catia, Version 5 Geometry Interface 2025 R1.64  
+ Catia, Version 6 Geometry Interface 2025 R1.64  
+ Creo Elements/Direct Modeling Geometry Interface 2025 R1.64 
+ Creo Parametric Geometry Interface 2025 R1.64   
+ Inventor Geometry Interface 2025 R1.64  
+ JTOpen Geometry Interface 2025 R1.64
+ NX Geometry Interface 2025 R1.64
+ Parasolid Geometry Interface  2025 R1.64
+ Solid Edge Geometry Interface 2025 R1.64
+ SOLIDWORKS Geometry Interface 2025 R1.64
+ Speos 2025 R1.64
+ SpaceClaim 2025 R1.64   
+ Speos RPC 2025 R1.64
+ Aqwa 2025 R1.64 
+ Autodyn 2025 R1.64  
+ Material Calibration App 2025 R1.64 
+ Mechanical Products 2025 R1.64  
+ Motion 2025 R1.64   
+ Academic Student 2025 R1.64 
+
+
+          *****  MAPDL COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = NOLIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  DISTRIBUTED MEMORY PARALLEL REQUESTED
+       4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
+    TOTAL OF     4 CORES REQUESTED
+  INPUT FILE NAME              = C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6\solve.out
+  START-UP FILE MODE           = NOREAD
+  STOP FILE MODE               = NOREAD
+
+ RELEASE= 2025 R1              BUILD= 25.1      UP20241202   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file0  14:52:48  JUN 13, 2025 CP=      0.109
+
+
+ PARAMETER _DS_PROGRESS =     999.0000000    
+
+ /INPUT FILE= ds.dat  LINE=       0
+
+
+
+ *** NOTE ***                            CP =       0.250   TIME= 14:52:48
+ The /CONFIG,NOELDB command is not valid in a distributed memory         
+ parallel solution.  Command is ignored.                                 
+
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  14.8800000    
+
+ TITLE= 
+ 60D Deliverable 3--Static Structural (A5)                                     
+
+  ACT Extensions:
+      LSDYNA, 2025.1
+      5f463412-bd3e-484b-87e7-cbc0a665e474, wbex
+ /COM,     ANSYSMotion, 2025.1
+      20180725-3f81-49eb-9f31-41364844c769, wbex
+  
+
+ SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6\
+
+ SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\60D Deliverable 3_files\dp0\global\MECH\SYS\Contact Tool\
+
+ SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_USERFILES_DIR(1) = C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\60D Deliverable 3_files\user_files\
+ --- Data in consistent NMM units. See Solving Units in the help system for more
+
+ MPA UNITS SPECIFIED FOR INTERNAL    
+  LENGTH      = MILLIMETERS (mm)
+  MASS        = TONNE (Mg)
+  TIME        = SECONDS (sec)
+  TEMPERATURE = CELSIUS (C)
+  TOFFSET     = 273.0
+  FORCE       = NEWTON (N)
+  HEAT        = MILLIJOULES (mJ)
+
+ INPUT  UNITS ARE ALSO SET TO MPA 
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R1          25.1     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   14:52:48  JUN 13, 2025 CP=      0.281
+
+ 60D Deliverable 3--Static Structural (A5)                                     
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+ *********** Nodes for the whole assembly ***********
+ *********** Elements for Body 1 'Default\Default' ***********
+ *********** Elements for Body 2 'Default\Default' ***********
+ *********** Elements for Body 3 'SYS\Fillet2' ***********
+ *********** Send User Defined Coordinate System(s) ***********
+ *********** Send Materials ***********
+ *********** Create Contact "Contact 1" ***********
+             Real Constant Set For Above Contact Is 5 & 4
+ *********** Create Contact "Contact 2" ***********
+             Real Constant Set For Above Contact Is 7 & 6
+ *********** Send Named Selection as Element Component ***********
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.344
+
+
+ --- Number of total nodes = 23726
+ --- Number of contact elements = 304
+ --- Number of spring elements = 0
+ --- Number of bearing elements = 0
+ --- Number of solid elements = 11539
+ --- Number of condensed parts = 0
+ --- Number of total elements = 11843
+
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  14.8800000    
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+ DO NOT SAVE ANY RESTART FILES AT ALL
+
+ ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
+
+
+ WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ NLDIAG: Nonlinear diagnostics CONT option is set to ON. 
+         Writing frequency : each ITERATION.
+
+ CONTACT INFORMATION PRINTOUT LEVEL       1
+
+ SELECT       FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       169 TO        177 STEP          1
+
+        304  ELEMENTS (OF      11843  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ SELECT      ALL NODES HAVING ANY ELEMENT IN ELEMENT SET.
+
+        462 NODES (OF      23726  DEFINED) SELECTED FROM
+      304 SELECTED ELEMENTS BY NSLE COMMAND.
+
+ SELECT      ALL ELEMENTS HAVING ANY NODE IN NODAL SET.
+
+        849 ELEMENTS (OF      11843  DEFINED) SELECTED FROM
+      462 SELECTED NODES BY  ESLN COMMAND.
+
+ SELECT      ALL NODES HAVING ANY ELEMENT IN ELEMENT SET.
+
+       1698 NODES (OF      23726  DEFINED) SELECTED FROM
+      849 SELECTED ELEMENTS BY NSLE COMMAND.
+
+ CHECK INITIAL OPEN/CLOSED STATUS OF SELECTED CONTACT ELEMENTS
+      AND POST INITIAL CONTACT STATUS
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
+
+ ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED AND NO
+ RESETTING IS NEEDED.
+
+ ELEMENT TYPE         2 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED AND NO
+ RESETTING IS NEEDED.
+
+ ELEMENT TYPE         3 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
+ HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE AND NO RESETTING IS NEEDED.
+
+
+
+ *** NOTE ***                            CP =       0.375   TIME= 14:52:48
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+ *WARNING*: Some MPC/Lagrange based elements (e.g.19515) in real         
+ constant set 5 overlap with other MPC/Lagrange based elements           
+ (e.g.19670) in real constant set 7 which can cause overconstraint.      
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 4 and contact element type 4 has been set up.  The         
+ companion pair has real constant set ID 5.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.70717    
+ Average contact pair depth                   0.88389    
+ Average target surface length                0.30379    
+ User defined pinball region PINB              2.0000    
+ *WARNING*: The user defined pinball radius may be too small to capture  
+ contacting zone under small sliding assumption.                         
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Min.  Initial gap 1.14206582 was detected between contact element 19494 
+ and target element 19595.                                               
+ Contact is detected due to initial settings.                            
+  
+ Max.  Geometric gap 1.98551955 has been detected between contact        
+ element 19506 and target element 19589.                                 
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 5 and contact element type 4 has been set up.  The         
+ companion pair has real constant set ID 4.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Distributed constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ *WARNING*: Certain contact elements (for example 19561&19671) overlap   
+ each other.  Overconstraint may occur.                                  
+ Average contact surface length               0.32963    
+ Average contact pair depth                   0.24435    
+ Average target surface length                0.72115    
+ User defined pinball region PINB              2.0000    
+ *WARNING*: The resulting pinball radius may be too large which may      
+ affect contact searching performance or even introduce spurious         
+ contact.                                                                
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Min.  Initial gap 1.05198982 was detected between contact element 19539 
+ and target element 19468.                                               
+ Contact is detected due to initial settings.                            
+  
+ Max.  Geometric gap 1.23484729 has been detected between contact        
+ element 19546 and target element 19469.                                 
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 6 and contact element type 6 has been set up.  The         
+ companion pair has real constant set ID 7.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.70717    
+ Average contact pair depth                   0.88389    
+ Average target surface length                0.30367    
+ User defined pinball region PINB              2.0000    
+ *WARNING*: The user defined pinball radius may be too small to capture  
+ contacting zone under small sliding assumption.                         
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Min.  Initial gap 1.12026245 was detected between contact element 19659 
+ and target element 19740.                                               
+ Contact is detected due to initial settings.                            
+  
+ Max.  Geometric gap 1.99847186 has been detected between contact        
+ element 19656 and target element 19751.                                 
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 7 and contact element type 6 has been set up.  The         
+ companion pair has real constant set ID 6.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Distributed constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ *WARNING*: Certain contact elements (for example 19713&19516) overlap   
+ each other.  Overconstraint may occur.                                  
+ Average contact surface length               0.32948    
+ Average contact pair depth                   0.24544    
+ Average target surface length                0.72115    
+ User defined pinball region PINB              2.0000    
+ *WARNING*: The resulting pinball radius may be too large which may      
+ affect contact searching performance or even introduce spurious         
+ contact.                                                                
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       0.438   TIME= 14:52:48
+ Min.  Initial gap 1.08489483 was detected between contact element 19690 
+ and target element 19633.                                               
+ Contact is detected due to initial settings.                            
+  
+ Max.  Geometric gap 1.35786055 has been detected between contact        
+ element 19701 and target element 19633.                                 
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** WARNING ***                         CP =       0.438   TIME= 14:52:48
+ Overconstraint may occur for Lagrange multiplier or MPC based contact   
+ algorithm.                                                              
+ The reasons for possible overconstraint are:                            
+
+ *** WARNING ***                         CP =       0.438   TIME= 14:52:48
+ Certain contact elements (for example 19713 & 19516) overlap with       
+ other.                                                                  
+ ****************************************
+  
+  
+
+  
+ The FEA model contains 0 external CE equations and 438 internal CE      
+ equations.                                                              
+  
+ *************************************************
+  SUMMARY FOR CONTACT PAIR IDENTIFIED BY REAL CONSTANT SET           4
+
+ *** NOTE ***                            CP =       0.562   TIME= 14:52:48
+ Contact pair is inactive.                                               
+  
+ *************************************************
+  SUMMARY FOR CONTACT PAIR IDENTIFIED BY REAL CONSTANT SET           5
+ Max.  Penetration of 0 has been detected between contact element 19532  
+ and target element 19468.                                               
+  
+ Max.  Geometrical gap of 1.23484729 has been detected between contact   
+ element 19546 and target element 19469.                                 
+ *WARNING*: The geometrical gap may be too large.  Increase pinball if   
+ it is a true geometrical gap.  Decrease pinball if it is a false one.   
+ For total 50 contact elements, there are 30 elements are in contact.    
+ There are 30 elements are in sticking.                                  
+ Potential overconstraint is detected.                                   
+ Max.  Pinball distance 2.                                               
+ One of the contact searching regions contains at least 20 target        
+ elements.                                                               
+ *************************************************
+  
+ *************************************************
+  SUMMARY FOR CONTACT PAIR IDENTIFIED BY REAL CONSTANT SET           6
+
+ *** NOTE ***                            CP =       0.562   TIME= 14:52:48
+ Contact pair is inactive.                                               
+  
+ *************************************************
+  SUMMARY FOR CONTACT PAIR IDENTIFIED BY REAL CONSTANT SET           7
+ Max.  Penetration of 0 has been detected between contact element 19684  
+ and target element 19634.                                               
+  
+ Max.  Geometrical gap of 1.35786055 has been detected between contact   
+ element 19701 and target element 19633.                                 
+ *WARNING*: The geometrical gap may be too large.  Increase pinball if   
+ it is a true geometrical gap.  Decrease pinball if it is a false one.   
+ For total 50 contact elements, there are 30 elements are in contact.    
+ There are 30 elements are in sticking.                                  
+ Potential overconstraint is detected.                                   
+ Max.  Pinball distance 2.                                               
+ One of the contact searching regions contains at least 20 target        
+ elements.                                                               
+ *************************************************
+
+
+
+            **** CENTER OF MASS, MASS, AND MASS MOMENTS OF INERTIA ****
+
+  CALCULATIONS ASSUME ELEMENT MASS AT ELEMENT CENTROID
+
+  TOTAL MASS =  0.19815E-06
+
+                           MOM. OF INERTIA         MOM. OF INERTIA
+  CENTER OF MASS            ABOUT ORIGIN        ABOUT CENTER OF MASS
+
+  XC =   17.990          IXX =   0.2625E-05      IXX =   0.1220E-05
+  YC =   2.6250          IYY =   0.6782E-04      IYY =   0.3654E-05
+  ZC =  0.44862          IZZ =   0.6798E-04      IZZ =   0.2490E-05
+                         IXY =  -0.9340E-05      IXY =   0.1746E-07
+                         IYZ =  -0.2331E-06      IYZ =   0.2229E-09
+                         IZX =  -0.1631E-05      IZX =  -0.3143E-07
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1  0.990742E-07
+     2  0.990742E-07
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        28  SOLID186      0.000   0.000000
+        2        28  SOLID186      0.000   0.000000
+        3       489  SOLID187      0.188   0.000383
+        4        76  CONTA174      0.000   0.000000
+        5        76  TARGE170      0.000   0.000000
+        6        76  CONTA174      0.000   0.000000
+        7        76  TARGE170      0.000   0.000000
+ Time at end of element matrix formulation CP = 0.5625.                  
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        4        76  CONTA174      0.000   0.000000
+        6        63  CONTA174      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        4        76  CONTA174      0.000   0.000000
+        6        63  CONTA174      0.000   0.000000
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.609
+
+
+
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  14.8800000    
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  14.8800000    
+
+ PARAMETER _PREPTIME =     0.000000000    
+
+ PARAMETER _SOLVTIME =     0.000000000    
+
+ PARAMETER _POSTTIME =     0.000000000    
+
+ PARAMETER _TOTALTIM =     0.000000000    
+
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  0.00000000    
+
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  0.00000000    
+
+ *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  0.00000000    
+
+ *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  0.00000000    
+ --- Total number of nodes = 23726
+ --- Total number of elements = 11843
+ --- Element load balance ratio = 0
+ --- Time to combine distributed files = 0
+ --- Sparse memory mode = 0
+ --- Number of DOF = 0
+
+ EXIT MAPDL WITHOUT SAVING DATABASE
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          2
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
++--------------------- M A P D L   S T A T I S T I C S ------------------------+
+
+Release: 2025 R1            Build: 25.1       Update: UP20241202   Platform: WINDOWS x64 
+Date Run: 06/13/2025   Time: 14:52     Process ID: 57432
+Operating System: Windows 11  (Build: 26100)
+
+Processor Model: 13th Gen Intel(R) Core(TM) i9-13950HX
+
+Compiler: Intel(R) Fortran Compiler Classic Version 2021.9  (Build: 20230302)
+          Intel(R) C/C++ Compiler Classic Version 2021.9  (Build: 20230302)
+          Intel(R) oneAPI Math Kernel Library Version 2023.1-Product Build 20230303
+
+Number of machines requested            :    1
+Total number of cores available         :   32
+Number of physical cores available      :   24
+Number of processes requested           :    4
+Number of threads per process requested :    1
+Total number of cores requested         :    4 (Distributed Memory Parallel)               
+MPI Type: INTELMPI
+MPI Version: Intel(R) MPI Library 2021.13 for Windows* OS
+
+
+GPU Acceleration: Not Requested
+
+Job Name: file0
+Input File: dummy.dat
+
+  Core                Machine Name   Working Directory
+ -----------------------------------------------------
+     0                mechgodzilla   C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6
+     1                mechgodzilla   C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6
+     2                mechgodzilla   C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6
+     3                mechgodzilla   C:\Users\mundy\OneDrive\Documents\UCI Stuff\BME 60D\_ProjectScratch\ScrB5E6
+ 
+Latency time from master to core     1 =    2.812 microseconds
+Latency time from master to core     2 =    2.832 microseconds
+Latency time from master to core     3 =    2.656 microseconds
+ 
+Communication speed from master to core     1 = 14025.74 MB/sec
+Communication speed from master to core     2 = 13548.99 MB/sec
+Communication speed from master to core     3 = 14699.94 MB/sec
+
+Total CPU time for main thread                    :        0.8 seconds
+Total CPU time summed for all threads             :        0.6 seconds
+
+Elapsed time spent obtaining a license            :        0.5 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.1 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Equation solver used                              :            Sparse (symmetric)
+
+Sum of disk space used on all processes           :        4.9 MB
+
+Sum of memory used on all processes               :       49.0 MB
+Sum of memory allocated on all processes          :     2880.0 MB
+Physical memory available                         :         32 GB
+Total amount of I/O written to disk               :        0.0 GB
+Total amount of I/O read from disk                :        0.0 GB
+
++------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
+
+
+ *-----------------------------------------------------------------------------*
+ |                                                                             |
+ |                               RUN COMPLETED                                 |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Ansys MAPDL 2025 R1         Build 25.1         UP20241202    WINDOWS x64   |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
+ |  Max Database Used(Master)     15 MB     Max Scratch Used(Master)     16 MB |
+ |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)     5 MB |
+ |  Sum Database Used(All)        18 MB     Sum Scratch Used(All)        31 MB |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |        CP Time      (sec) =          0.625       Time  =  14:52:48          |
+ |        Elapsed Time (sec) =          2.000       Date  =  06/13/2025        |
+ |                                                                             |
+ *-----------------------------------------------------------------------------*

@@ -1,0 +1,103 @@
+# encoding: utf-8
+# 2025 R1
+SetScriptVersion(Version="25.1.122")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = GetSystem(Name="SYS")
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+system2.Delete()
+system3 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometry1 = system3.GetContainer(ComponentName="Geometry")
+geometry1.SetFile(FilePath=GetAbsoluteUserPathName("UCI Stuff/BME 60D/Saccular_Anuerysms.STEP"))
+geometry1.Edit(IsDiscoveryGeometry=True)
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Edit()
+engineeringData1 = system3.GetContainer(ComponentName="Engineering Data")
+matl1 = engineeringData1.CreateMaterial(Name="aneurysm type shit v2")
+matlProp1 = matl1.CreateProperty(
+    Name="Ogden",
+    Definition="1st Order",
+    Qualifiers={"Definition": "1st Order", "Behavior": ""})
+matlProp2 = matl1.CreateProperty(
+    Name="Mooney-Rivlin",
+    Definition="2 Parameter",
+    Qualifiers={"Definition": "2 Parameter", "Behavior": ""})
+matlProp2.Delete(Definition="2 Parameter")
+matlProp1.Delete(Definition="1st Order")
+matlProp3 = matl1.CreateProperty(
+    Name="Mooney-Rivlin",
+    Definition="2 Parameter",
+    Qualifiers={"Definition": "2 Parameter", "Behavior": ""})
+engineeringData2 = system1.GetContainer(ComponentName="Engineering Data")
+matl2 = engineeringData2.CreateMaterial(Name="aneursym type shit vtwooo")
+matlProp4 = matl2.CreateProperty(
+    Name="Mooney-Rivlin",
+    Definition="2 Parameter",
+    Qualifiers={"Definition": "2 Parameter", "Behavior": ""})
+matlProp4.SetData(
+    Index=-1,
+    Variables=["Material Constant C10"],
+    Values=[["0.02 [Pa]"]])
+matlProp4.SetVariableProperty(
+    VariableName="Material Constant C10",
+    Property="Unit",
+    Value="MPa")
+matlProp4.SetData(
+    Variables=["Material Constant C10"],
+    Values=[["2E-08 [MPa]"]])
+matlProp4.SetData(
+    Variables=["Material Constant C10"],
+    Values=[["0.02 [MPa]"]])
+matlProp4.SetVariableProperty(
+    VariableName="Material Constant C01",
+    Property="Unit",
+    Value="MPa")
+matlProp4.SetData(
+    Variables=["Material Constant C01"],
+    Values=[["7.8886090522101181E-31 [MPa]"]])
+matlProp4.SetData(
+    Variables=["Material Constant C01"],
+    Values=[["0.005 [MPa]"]])
+matlProp4.SetData(
+    Variables=["Incompressibility Parameter D1"],
+    Values=[["2E-06 [Pa^-1]"]])
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+geometry2 = system1.GetContainer(ComponentName="Geometry")
+geometry2.Edit(IsDiscoveryGeometry=True)
+geometry2.Edit(IsDiscoveryGeometry=True)
+geometry2.Exit()
+geometry2.Edit(IsDiscoveryGeometry=True)
+geometry2.Exit()
+system3.Delete()
+geometry2.Edit(IsSpaceClaimGeometry=True)
+modelComponent1.Update(AllDependencies=True)
+model1.Exit()
+model1.Edit()
+model1.Exit()
+modelComponent1.Refresh()
+model1.Edit()
+model1.Exit()
+modelComponent1.Refresh()
+model1.Edit()
+material1 = engineeringData2.GetMaterial(Name="aneursym type shit")
+material1.Delete()
+matl2.DisplayName = "aneursym"
+Save(Overwrite=True)
+geometry2.Exit()
+model1.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)

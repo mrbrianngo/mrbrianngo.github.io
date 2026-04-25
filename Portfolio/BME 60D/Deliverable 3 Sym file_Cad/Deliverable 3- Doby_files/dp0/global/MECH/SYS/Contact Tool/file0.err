@@ -1,0 +1,9 @@
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       14:52:47
+
+ *** WARNING ***                         CP =       0.438   TIME= 14:52:48
+ Overconstraint may occur for Lagrange multiplier or MPC based contact   
+ algorithm.                                                              
+
+ *** WARNING ***                         CP =       0.438   TIME= 14:52:48
+ Certain contact elements (for example 19713 & 19516) overlap with       
+ other.                                                                  

@@ -1,0 +1,12 @@
+serial:
+  port: "TODO"          # replace with your port
+  baud: 9600
+capture:
+  region: [ 100, 120, 800, 600 ]   # left, top, width, height – find once with a ruler
+grid:
+  rows_fwd: 5
+  rows_back: 6
+  columns: 10
+model_path: "models/yolo11nbestrn.pt"
+output: "runs/2025-05-18"
+pixel_per_mm: 320.0        # leave blank now, fill in step 9
