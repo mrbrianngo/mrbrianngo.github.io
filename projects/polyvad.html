@@ -142,6 +142,26 @@
       align-items: center;
       gap: 4px;
     }
+
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      background: #0a1a0a;
+      border: 1px solid #222;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .pdf-container embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-container {
+        height: 500px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -156,13 +176,9 @@
   <!-- MEDIA & DOCUMENTS SECTION -->
   <section class="media-section">
     <div class="title" style="font-size: 16px;">1. Project Abstract</div>
-    <a href="../Portfolio/PoLyVAD/Abstract.docx" download class="file-card" style="margin-bottom: 32px; background: rgba(255, 79, 0, 0.1); border-color: #ff4f00;">
-      <div class="file-info">
-        <div class="file-name" style="font-size: 16px;">Abstract.docx</div>
-        <div class="file-meta">WORD DOCUMENT (Click to Download/Open)</div>
-      </div>
-      <div class="download-btn">DOWNLOAD ABSTRACT ⬇</div>
-    </a>
+    <div class="pdf-container">
+      <embed src="../Portfolio/PoLyVAD/Abstract.docx.pdf" type="application/pdf">
+    </div>
 
     <div class="title" style="font-size: 16px; margin-top: 48px;">2. Executive Summary</div>
     <div class="pdf-container">
@@ -170,39 +186,8 @@
     </div>
 
     <div class="title" style="font-size: 16px; margin-top: 48px;">3. Pitch Deck</div>
-    <a href="../Portfolio/PoLyVAD/PoLyVAD%20Pitch%20Deck.pptx" download class="file-card" style="margin-top: 24px; background: rgba(255, 79, 0, 0.1); border-color: #ff4f00;">
-      <div class="file-info">
-        <div class="file-name" style="font-size: 16px;">PoLyVAD Pitch Deck.pptx</div>
-        <div class="file-meta">POWERPOINT (Click to Download/Open)</div>
-      </div>
-      <div class="download-btn">DOWNLOAD PITCH DECK ⬇</div>
-    </a>
-
-    <div class="title" style="font-size: 16px; margin-top: 64px;">All Project Files</div>
-    <div class="file-grid">
-      <a href="../Portfolio/PoLyVAD/Executive%20Summary.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Executive Summary.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
-      
-      <a href="../Portfolio/PoLyVAD/PoLyVAD%20Pitch%20Deck.pptx" download class="file-card">
-        <div class="file-info">
-          <div class="file-name">Pitch Deck.pptx</div>
-          <div class="file-meta">POWERPOINT</div>
-        </div>
-        <div class="download-btn">DOWNLOAD ⬇</div>
-      </a>
-
-      <a href="../Portfolio/PoLyVAD/Abstract.docx" download class="file-card">
-        <div class="file-info">
-          <div class="file-name">Abstract.docx</div>
-          <div class="file-meta">WORD DOCUMENT</div>
-        </div>
-        <div class="download-btn">DOWNLOAD ⬇</div>
-      </a>
+    <div class="pdf-container">
+      <embed src="../Portfolio/PoLyVAD/PoLyVAD%20Pitch%20Deck.pptx.pdf" type="application/pdf">
     </div>
   </section>
   <hr style="margin:24px 0; border-color:#222">

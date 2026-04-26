@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Brian Ngo — Portfolio</title>
@@ -34,7 +35,9 @@
     }
 
     /* Parallax Star Background */
-    #stars, #stars2, #stars3 {
+    #stars,
+    #stars2,
+    #stars3 {
       position: fixed;
       top: 0;
       left: 0;
@@ -102,14 +105,16 @@
       from {
         transform: translateY(0px);
       }
+
       to {
         transform: translateY(-2000px);
       }
     }
 
-.page {
+    .page {
       height: 100vh;
-      padding: 24px 24px 40px; /* Reintroduced 24px horizontal padding (left and right) */
+      padding: 24px 24px 40px;
+      /* Reintroduced 24px horizontal padding (left and right) */
       overflow-y: scroll;
       overflow-x: hidden;
     }
@@ -135,8 +140,10 @@
 
     .subtitle {
       font-size: 12px;
-      color: var(--text-main); /* Make subtitle text lighter */
-      line-height: 1.8;       /* More vertical spacing between lines */
+      color: var(--text-main);
+      /* Make subtitle text lighter */
+      line-height: 1.8;
+      /* More vertical spacing between lines */
     }
 
     /* Make <br> inside subtitle act as spaced breaks so each point has breathing room */
@@ -215,7 +222,7 @@
 
     .row:hover {
       transform: scale(1.02);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
     .row:hover .num {
@@ -230,7 +237,7 @@
       transition: transform 0.15s ease-out;
     }
 
-    .title:hover ~ .category {
+    .title:hover~.category {
       color: var(--highlight);
       opacity: 1;
       transition: transform 0.15s ease-out, opacity 0.3s ease-out, color 0.15s ease-out;
@@ -282,186 +289,222 @@
 
     /* --- TABLET RESPONSIVENESS (600px to 1024px) --- */
     @media (min-width: 601px) and (max-width: 1024px) {
-    /* Stack the Project/Class Row elements on tablet */
-    .row {
+
+      /* Stack the Project/Class Row elements on tablet */
+      .row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0; /* Remove gap when stacking */
-        padding: 12px 0; /* Increase vertical padding for better touch targets */
+        gap: 0;
+        /* Remove gap when stacking */
+        padding: 12px 0;
+        /* Increase vertical padding for better touch targets */
         border-top: 1px solid #111;
-    }
+      }
 
-    /* Remove the 'num' and 'category' from the horizontal flow */
-    .num, .category {
-        width: auto;  
+      /* Remove the 'num' and 'category' from the horizontal flow */
+      .num,
+      .category {
+        width: auto;
         text-align: left;
         position: static;
-    }
+      }
 
-    /* Reduce the size of the main title */
-    .title {
-        font-size: 32px; 
-        order: 1; /* Move the title to the second position in the stack */
-        margin: 4px 0; /* Add some vertical space around the title */
+      /* Reduce the size of the main title */
+      .title {
+        font-size: 32px;
+        order: 1;
+        /* Move the title to the second position in the stack */
+        margin: 4px 0;
+        /* Add some vertical space around the title */
         padding: 0;
         padding-right: 0;
-    }
+      }
 
-    /* Reorder the elements */
-    .num {
-        order: 0; /* Place the number/index first */
+      /* Reorder the elements */
+      .num {
+        order: 0;
+        /* Place the number/index first */
         font-size: 14px;
-        color: var(--highlight); /* Highlight the index for clarity */
-    }
+        color: var(--highlight);
+        /* Highlight the index for clarity */
+      }
 
-    .category {
-        order: 2; /* Place the skills/category last */
+      .category {
+        order: 2;
+        /* Place the skills/category last */
         font-size: 9px;
         line-height: 1.4;
-        margin-top: 4px; /* Space above the category */
+        margin-top: 4px;
+        /* Space above the category */
         padding: 0;
         padding-left: 0;
-        color: var(--text-faint); /* Keep it subtle */
-        opacity: 1; /* Always visible on tablet */
+        color: var(--text-faint);
+        /* Keep it subtle */
+        opacity: 1;
+        /* Always visible on tablet */
         position: static;
         right: auto;
         top: auto;
         max-width: none;
         text-align: left;
-    }
+      }
 
-    /* Hide the second column header (SKILLS/Class) when stacked */
-    .section-header-bar {
-        border-bottom: none; /* Remove the bottom border on tablet */
+      /* Hide the second column header (SKILLS/Class) when stacked */
+      .section-header-bar {
+        border-bottom: none;
+        /* Remove the bottom border on tablet */
         margin-top: 20px;
-    }
+      }
 
-    .skills-label {
+      .skills-label {
         display: none;
-    }
+      }
 
-    .category-label {
-        border-bottom: 1px solid #111; /* Add the border back to the main label */
+      .category-label {
+        border-bottom: 1px solid #111;
+        /* Add the border back to the main label */
         width: 100%;
-    }
+      }
 
-    /* Remove the hover scaling and shadow effect on tablet for better performance/touch */
-    .row:hover {
+      /* Remove the hover scaling and shadow effect on tablet for better performance/touch */
+      .row:hover {
         transform: none;
         box-shadow: none;
-    }
+      }
 
-    .row:hover .num, .row:hover .title, .row:hover .category {
-        color: inherit; /* Reset colors on hover */
+      .row:hover .num,
+      .row:hover .title,
+      .row:hover .category {
+        color: inherit;
+        /* Reset colors on hover */
         transform: none;
+      }
     }
-}
 
     /* --- MOBILE RESPONSIVENESS (Max Width: 600px) --- */
     @media (max-width: 600px) {
-    /* Adjust overall padding for mobile */
-    .page {
-        padding: 16px; 
-    }
 
-    /* Stack Top Bar elements */
-    .top-bar {
+      /* Adjust overall padding for mobile */
+      .page {
+        padding: 16px;
+      }
+
+      /* Stack Top Bar elements */
+      .top-bar {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 24px;
-        gap: 8px; /* Space between the name/subtitle and the links */
-    }
+        gap: 8px;
+        /* Space between the name/subtitle and the links */
+      }
 
-    /* Make the title smaller on mobile */
-    .name {
+      /* Make the title smaller on mobile */
+      .name {
         font-size: 18px;
-    }
+      }
 
-    .subtitle {
-        font-size: 10px; /* Make the subtitle less prominent */
-    }
+      .subtitle {
+        font-size: 10px;
+        /* Make the subtitle less prominent */
+      }
 
-    /* Stack the Project/Class Row elements */
-    .row {
+      /* Stack the Project/Class Row elements */
+      .row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0; /* Remove gap when stacking */
-        padding: 12px 0; /* Increase vertical padding for better touch targets */
+        gap: 0;
+        /* Remove gap when stacking */
+        padding: 12px 0;
+        /* Increase vertical padding for better touch targets */
         border-top: 1px solid #111;
-    }
+      }
 
-    /* Remove the 'num' and 'category' from the horizontal flow */
-    .num, .category {
-        width: auto;  
+      /* Remove the 'num' and 'category' from the horizontal flow */
+      .num,
+      .category {
+        width: auto;
         text-align: left;
         position: static;
-    }
+      }
 
-    /* Reduce the size of the main title */
-    .title {
-        font-size: 24px; 
-        order: 1; /* Move the title to the second position in the stack */
-        margin: 4px 0; /* Add some vertical space around the title */
+      /* Reduce the size of the main title */
+      .title {
+        font-size: 24px;
+        order: 1;
+        /* Move the title to the second position in the stack */
+        margin: 4px 0;
+        /* Add some vertical space around the title */
         padding: 0;
         padding-right: 0;
-    }
+      }
 
-    /* Reorder the elements */
-    .num {
-        order: 0; /* Place the number/index first */
+      /* Reorder the elements */
+      .num {
+        order: 0;
+        /* Place the number/index first */
         font-size: 14px;
-        color: var(--highlight); /* Highlight the index for clarity */
-    }
+        color: var(--highlight);
+        /* Highlight the index for clarity */
+      }
 
-    .category {
-        order: 2; /* Place the skills/category last */
+      .category {
+        order: 2;
+        /* Place the skills/category last */
         font-size: 9px;
         line-height: 1.4;
-        margin-top: 4px; /* Space above the category */
+        margin-top: 4px;
+        /* Space above the category */
         padding: 0;
         padding-left: 0;
-        color: var(--text-faint); /* Keep it subtle */
-        opacity: 1; /* Always visible on mobile */
+        color: var(--text-faint);
+        /* Keep it subtle */
+        opacity: 1;
+        /* Always visible on mobile */
         position: static;
         right: auto;
         top: auto;
         max-width: none;
         text-align: left;
-    }
+      }
 
-    /* Hide the second column header (SKILLS/Class) when stacked */
-    .section-header-bar {
-        border-bottom: none; /* Remove the bottom border on mobile */
+      /* Hide the second column header (SKILLS/Class) when stacked */
+      .section-header-bar {
+        border-bottom: none;
+        /* Remove the bottom border on mobile */
         margin-top: 20px;
-    }
+      }
 
-    .skills-label {
+      .skills-label {
         display: none;
-    }
+      }
 
-    .category-label {
-        border-bottom: 1px solid #111; /* Add the border back to the main label */
+      .category-label {
+        border-bottom: 1px solid #111;
+        /* Add the border back to the main label */
         width: 100%;
-    }
+      }
 
-    /* Remove the hover scaling and shadow effect on mobile for better performance/touch */
-    .row:hover {
+      /* Remove the hover scaling and shadow effect on mobile for better performance/touch */
+      .row:hover {
         transform: none;
         box-shadow: none;
-    }
+      }
 
-    .row:hover .num, .row:hover .title, .row:hover .category {
-        color: inherit; /* Reset colors on hover */
+      .row:hover .num,
+      .row:hover .title,
+      .row:hover .category {
+        color: inherit;
+        /* Reset colors on hover */
         transform: none;
+      }
     }
-}
 
-/* Ensure categories are visible on touch devices (hover not available) */
-@media (hover: none) and (pointer: coarse) {
-    .category {
+    /* Ensure categories are visible on touch devices (hover not available) */
+    @media (hover: none) and (pointer: coarse) {
+      .category {
         opacity: 1 !important;
+      }
     }
-}
 
     /* Mobile: show stars over a green-leaning color for atmosphere */
     @media (max-width: 600px) {
@@ -471,17 +514,22 @@
       }
 
       /* Restore star layers on mobile but tone them down for readability and performance */
-      #stars, #stars2, #stars3 {
+      #stars,
+      #stars2,
+      #stars3 {
         display: block !important;
-        opacity: 0.75;           /* slightly dim so content remains readable */
-        pointer-events: none;    /* avoid accidental interaction */
+        opacity: 0.75;
+        /* slightly dim so content remains readable */
+        pointer-events: none;
+        /* avoid accidental interaction */
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
       }
 
       /* Mobile-specific star distributions (use vw/vh so stars fill small screens evenly) */
       #stars {
-        width: 1px; height: 1px;
+        width: 1px;
+        height: 1px;
         box-shadow:
           5vw 8vh #FFF, 12vw 20vh #FFF, 18vw 5vh #FFF, 25vw 30vh #FFF, 32vw 12vh #FFF,
           40vw 6vh #FFF, 48vw 28vh #FFF, 55vw 16vh #FFF, 62vw 36vh #FFF, 70vw 4vh #FFF,
@@ -489,64 +537,90 @@
           35vw 60vh #FFF, 48vw 72vh #FFF, 60vw 55vh #FFF, 72vw 65vh #FFF, 84vw 58vh #FFF;
         animation-duration: 70s !important;
       }
-      #stars:after { content: " "; position: absolute; top: 2000px; width:1px; height:1px; background: transparent;
+
+      #stars:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
         box-shadow: 5vw 8vh #FFF, 12vw 20vh #FFF, 18vw 5vh #FFF, 25vw 30vh #FFF, 32vw 12vh #FFF,
-                   40vw 6vh #FFF, 48vw 28vh #FFF, 55vw 16vh #FFF, 62vw 36vh #FFF, 70vw 4vh #FFF,
-                   78vw 22vh #FFF, 85vw 10vh #FFF, 92vw 34vh #FFF, 10vw 42vh #FFF, 22vw 50vh #FFF,
-                   35vw 60vh #FFF, 48vw 72vh #FFF, 60vw 55vh #FFF, 72vw 65vh #FFF, 84vw 58vh #FFF; }
+          40vw 6vh #FFF, 48vw 28vh #FFF, 55vw 16vh #FFF, 62vw 36vh #FFF, 70vw 4vh #FFF,
+          78vw 22vh #FFF, 85vw 10vh #FFF, 92vw 34vh #FFF, 10vw 42vh #FFF, 22vw 50vh #FFF,
+          35vw 60vh #FFF, 48vw 72vh #FFF, 60vw 55vh #FFF, 72vw 65vh #FFF, 84vw 58vh #FFF;
+      }
 
       #stars2 {
-        width: 2px; height: 2px;
+        width: 2px;
+        height: 2px;
         box-shadow:
           3vw 10vh #FFF, 15vw 4vh #FFF, 28vw 22vh #FFF, 38vw 8vh #FFF, 50vw 26vh #FFF,
           62vw 14vh #FFF, 74vw 36vh #FFF, 86vw 6vh #FFF, 6vw 32vh #FFF, 18vw 48vh #FFF,
           30vw 58vh #FFF, 42vw 68vh #FFF, 54vw 52vh #FFF, 66vw 60vh #FFF, 78vw 46vh #FFF;
         animation-duration: 140s !important;
       }
-      #stars2:after { content: " "; position: absolute; top: 2000px; width:2px; height:2px; background: transparent;
+
+      #stars2:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 2px;
+        height: 2px;
+        background: transparent;
         box-shadow: 3vw 10vh #FFF, 15vw 4vh #FFF, 28vw 22vh #FFF, 38vw 8vh #FFF, 50vw 26vh #FFF,
-                   62vw 14vh #FFF, 74vw 36vh #FFF, 86vw 6vh #FFF, 6vw 32vh #FFF, 18vw 48vh #FFF,
-                   30vw 58vh #FFF, 42vw 68vh #FFF, 54vw 52vh #FFF, 66vw 60vh #FFF, 78vw 46vh #FFF; }
+          62vw 14vh #FFF, 74vw 36vh #FFF, 86vw 6vh #FFF, 6vw 32vh #FFF, 18vw 48vh #FFF,
+          30vw 58vh #FFF, 42vw 68vh #FFF, 54vw 52vh #FFF, 66vw 60vh #FFF, 78vw 46vh #FFF;
+      }
 
       #stars3 {
-        width: 3px; height: 3px;
+        width: 3px;
+        height: 3px;
         box-shadow:
           8vw 12vh #FFF, 22vw 6vh #FFF, 36vw 28vh #FFF, 52vw 10vh #FFF, 68vw 30vh #FFF,
           80vw 18vh #FFF, 14vw 40vh #FFF, 44vw 54vh #FFF, 58vw 70vh #FFF, 90vw 50vh #FFF;
         animation-duration: 210s !important;
       }
-      #stars3:after { content: " "; position: absolute; top: 2000px; width:3px; height:3px; background: transparent;
-        box-shadow: 8vw 12vh #FFF, 22vw 6vh #FFF, 36vw 28vh #FFF, 52vw 10vh #FFF, 68vw 30vh #FFF,
-                   80vw 18vh #FFF, 14vw 40vh #FFF, 44vw 54vh #FFF, 58vw 70vh #FFF, 90vw 50vh #FFF; }
-    }
 
+      #stars3:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: 8vw 12vh #FFF, 22vw 6vh #FFF, 36vw 28vh #FFF, 52vw 10vh #FFF, 68vw 30vh #FFF,
+          80vw 18vh #FFF, 14vw 40vh #FFF, 44vw 54vh #FFF, 58vw 70vh #FFF, 90vw 50vh #FFF;
+      }
+    }
   </style>
 
-<script>
-  function autoNumberRows(listSelector) {
-    const lists = document.querySelectorAll(listSelector);
+  <script>
+    function autoNumberRows(listSelector) {
+      const lists = document.querySelectorAll(listSelector);
 
-    lists.forEach(list => {
-      const rows = list.querySelectorAll(".row");
+      lists.forEach(list => {
+        const rows = list.querySelectorAll(".row");
 
-      rows.forEach((row, index) => {
-        const numDiv = row.querySelector(".num");
+        rows.forEach((row, index) => {
+          const numDiv = row.querySelector(".num");
 
-        // Format number with leading zero (01, 02, 03...)
-        const formatted = "#" + String(index + 1).padStart(2, "0");
+          // Format number with leading zero (01, 02, 03...)
+          const formatted = "#" + String(index + 1).padStart(2, "0");
 
-        numDiv.textContent = formatted;
+          numDiv.textContent = formatted;
+        });
       });
-    });
-  }
+    }
 
-  // Run numbering on all lists
-  window.addEventListener("DOMContentLoaded", () => {
-    autoNumberRows(".list");
-  });
-</script>
+    // Run numbering on all lists
+    window.addEventListener("DOMContentLoaded", () => {
+      autoNumberRows(".list");
+    });
+  </script>
 
 </head>
+
 <body>
   <!-- Parallax Star Background -->
   <div id="stars"></div>
@@ -560,10 +634,7 @@
       <div class="top-bar">
         <div>
           <div class="name">Brian Ngo</div>
-          <div class="subtitle">Robotics · Medical Devices<br><br>
-            MATLAB · C++ · SOLIDWORKS<br><br>
-            M.S. Mechanical Engineering, UCSD '27<br>
-            B.S. Biomedical Engineering, UCI '25
+          <div class="subtitle">M.S. Mechanical Engineering, UCSD '27<br>B.S. Biomedical Engineering, UCI '25
           </div>
         </div>
         <div class="top-right">
@@ -575,73 +646,85 @@
 
       <!-- PROJECTS -->
       <div class="section-header-bar">
-  <div class="category-label">PROJECTS</div>
-  <div class="skills-label">SKILLS</div>
-</div>
-  <div class="list">
+        <div class="category-label">PROJECTS</div>
+        <div class="skills-label">SKILLS</div>
+      </div>
+      <div class="list">
         <a class="row" href="projects/muscle-strain-and-fatigue.html">
           <div class="num"></div>
           <div class="title">Ergonomic Benefits of Prismatic Deflection Loupes in Ophthalmic Surgery</div>
-          <div class="category">Scientific Methodology and Analysis<br>Study Design and Ethics<br>Biomechanical Modeling and Calculation<br>Statistical Analysis<br>Biomeasurement and EMG Setup<br>Signal Processing(MATLAB)<br>Posture Analysis (CV Angle)<br>Psychometric and Qualitative Assessment<br>Task Standardization<br>Research Improvement and Critical Thinking<br>clinical trials<br>scientific authorship</div>
+          <div class="category">Scientific Methodology and Analysis<br>Study Design and Ethics<br>Biomechanical Modeling
+            and Calculation<br>Statistical Analysis<br>Biomeasurement and EMG Setup<br>Signal
+            Processing(MATLAB)<br>Posture Analysis (CV Angle)<br>Psychometric and Qualitative Assessment<br>Task
+            Standardization<br>Research Improvement and Critical Thinking<br>clinical trials<br>scientific authorship
+          </div>
         </a>
 
         <a class="row" href="projects/automated-metal-particulate.html">
           <div class="num"></div>
           <div class="title">Automated Metal Particulate Counting for Handpiece Manufacturing</div>
-          <div class="category">Mechanical Design and Modeling<br>Materials Science<br>Manufacturing Processes<br>Circuitry and Electronics<br>Calibration and Precision<br>Microcontroller Programming<br>Python Programming<br>omputer Vision and AI (YOLOv5)<br>Image Processing<br>User Interface Development</div>
+          <div class="category">Mechanical Design and Modeling<br>Materials Science<br>Manufacturing
+            Processes<br>Circuitry and Electronics<br>Calibration and Precision<br>Microcontroller Programming<br>Python
+            Programming<br>omputer Vision and AI (YOLOv5)<br>Image Processing<br>User Interface Development</div>
         </a>
 
         <a class="row" href="projects/eye-muscle-hook.html">
           <div class="num"></div>
           <div class="title">Eye Muscle Hook</div>
-          <div class="category">MEDICAL DEVICE-RELATED COMPUTER-AIDED DESIGN<br>Finite Element Analysis / VALIDATION<br>STRAIN GAUGE INSTRUMENTATION<br>PRECISION MACHINING<br>CIRCUITS</div>
-        </a>        
+          <div class="category">MEDICAL DEVICE-RELATED COMPUTER-AIDED DESIGN<br>Finite Element Analysis /
+            VALIDATION<br>STRAIN GAUGE INSTRUMENTATION<br>PRECISION MACHINING<br>CIRCUITS</div>
+        </a>
 
         <a class="row" href="projects/tummy-time.html">
           <div class="num"></div>
           <div class="title">Tummy Time</div>
-          <div class="category">USER-CENTERED COMPUTER-AIDED DESIGN<br>NICU DEVICE PROTOTYPING<br>STRESS TESTING<br>CLINICAL FEEDBACK INTEGRATION<br>MANUFACTURING<br>Material Compliance / Biocompatibility Assessment</div>
+          <div class="category">USER-CENTERED COMPUTER-AIDED DESIGN<br>NICU DEVICE PROTOTYPING<br>STRESS
+            TESTING<br>CLINICAL FEEDBACK INTEGRATION<br>MANUFACTURING<br>Material Compliance / Biocompatibility
+            Assessment</div>
         </a>
 
-        <a class="row" 
-          href="projects/be-my-anesthesiologist.html">
+        <a class="row" href="projects/be-my-anesthesiologist.html">
           <div class="num"></div>
           <div class="title">Be My Anesthesiologist</div>
-          <div class="category">REAL-TIME MONITORING<br>SERVO CONTROL<br>AI-DRIVEN DECISION SUPPORT<br>TELE-MEDICINE SYSTEMS</div>
+          <div class="category">REAL-TIME MONITORING<br>SERVO CONTROL<br>AI-DRIVEN DECISION SUPPORT<br>TELE-MEDICINE
+            SYSTEMS</div>
         </a>
 
         <a class="row" href="projects/folding-cane.html">
           <div class="num"></div>
           <div class="title">Folding Cane</div>
-          <div class="category">SOLIDWORKS COMPUTER-AIDED DESIGN<br>STRESS-STRAIN SIMULATION<br>MATERIAL SELECTION<br>ASSISTIVE MOBILITY</div>
+          <div class="category">SOLIDWORKS COMPUTER-AIDED DESIGN<br>STRESS-STRAIN SIMULATION<br>MATERIAL
+            SELECTION<br>ASSISTIVE MOBILITY</div>
         </a>
 
         <a class="row" href="projects/aneurysm-clip.html">
           <div class="num"></div>
           <div class="title">Aneurysm Clip</div>
-          <div class="category">FINITE ELEMENT ANALYSIS<br>ANSYS STATIC STRUCTURAL<br>BIOMECHANICAL MODELING<br>STRESS & STRAIN SIMULATION</div>
+          <div class="category">FINITE ELEMENT ANALYSIS<br>ANSYS STATIC STRUCTURAL<br>BIOMECHANICAL MODELING<br>STRESS &
+            STRAIN SIMULATION</div>
         </a>
 
         <a class="row" href="projects/polyvad.html">
           <div class="num"></div>
           <div class="title">PolyVAD</div>
-          <div class="category">TEAM MANAGEMENT<br>CARDIOVASCULAR DEVICE DESIGN<br>INDUCTIVE CHARGING<br>PROPOSAL WRITING</div>
+          <div class="category">TEAM MANAGEMENT<br>CARDIOVASCULAR DEVICE DESIGN<br>INDUCTIVE CHARGING<br>PROPOSAL
+            WRITING</div>
         </a>
 
         <a class="row" href="projects/hello-kitty-morse-code.html">
           <div class="num"></div>
           <div class="title">Hello Kitty Morse Code Translator</div>
           <div class="category">ARDUINO PROGRAMMING<br>HARDWARE INTEGRATION<br>LABVIEW DAQ<br>C++</div>
-        </a>        
+        </a>
 
       </div>
 
       <!-- RELEVANT COURSEWORK -->
-       <div class="section-header-bar">
+      <div class="section-header-bar">
         <div class="category-label">RELEVANT COURSEWORK</div>
         <div class="skills-label">Class</div>
-        </div>
-        <div class="list">
+      </div>
+      <div class="list">
 
         <a class="row" href="courses/intro-to-bme.html">
           <div class="num"></div>
@@ -658,7 +741,7 @@
         <a class="row" href="courses/biomaterials.html">
           <div class="num"></div>
           <div class="title">Biomaterials</div>
-          <div class="category">BME 111</div> 
+          <div class="category">BME 111</div>
         </a>
 
         <a class="row" href="courses/sensory-motor-systems.html">
@@ -695,7 +778,7 @@
           <div class="num"></div>
           <div class="title">Immunoengineering</div>
           <div class="category">BME 195 / Winter Quarter</div>
-        </a>        
+        </a>
 
         <a class="row" href="courses/communications.html">
           <div class="num"></div>
@@ -706,9 +789,9 @@
       </div>
 
       <!-- EXTRACURRICULARS -->
-       <div class="section-header-bar">
-      <div class="category-label">EXTRACURRICULARS</div>
-      <div class="skills-label">SKILLS</div>
+      <div class="section-header-bar">
+        <div class="category-label">EXTRACURRICULARS</div>
+        <div class="skills-label">SKILLS</div>
       </div>
       <div class="list">
 
@@ -716,19 +799,19 @@
           <div class="num"></div>
           <div class="title">UCI BME Alumni Panel at BioENGINE Program</div>
           <div class="category">PUBLIC SPEAKING</div>
-        </a>  
-     
+        </a>
+
         <a class="row" href="extracurriculars/florida-postcards.html">
           <div class="num"></div>
           <div class="title">Florida Postcards</div>
           <div class="category">FILMMAKING<br>EDITING<br>CINEMATOGRAPHY</div>
-        </a>        
+        </a>
 
         <a class="row" href="extracurriculars/japan-korea-postcards.html">
           <div class="num"></div>
           <div class="title">Japan+Korea Postcards</div>
           <div class="category">FILMMAKING<br>EDITING<br>CINEMATOGRAPHY</div>
-        </a>  
+        </a>
 
         <a class="row" href="extracurriculars/new-university.html">
           <div class="num"></div>
@@ -736,7 +819,9 @@
           <div class="category">JOURNALISTIC WRITING<br>OPINION EDITORIAL<br>CONTENT CREATION</div>
         </a>
 
-        <a class="row" href="https://brianngo.notion.site/NBC-Bay-Area-Intern-Work-fb9631b714864f649ee0ec78fbc93625?pvs=74" target="_blank" rel="noreferrer">
+        <a class="row"
+          href="https://brianngo.notion.site/NBC-Bay-Area-Intern-Work-fb9631b714864f649ee0ec78fbc93625?pvs=74"
+          target="_blank" rel="noreferrer">
           <div class="num"></div>
           <div class="title">NBC Bay Area</div>
           <div class="category">INVESTIGATIVE REPORTING<br>DATA & PUBLIC RECORD ANALYSIS<br>FIELD NEWSGATHERING</div>
@@ -764,17 +849,16 @@
           <div class="num"></div>
           <div class="title">CIGGY</div>
           <div class="category">FILMMAKING<br>EDITING<br>CINEMATOGRAPHY</div>
-        </a>     
+        </a>
 
       </div>
 
     </div>
   </div>
 
-    </div> <!-- end .inner -->
+  </div> <!-- end .inner -->
   </div> <!-- end .page -->
 
 </body>
+
 </html>
-
-

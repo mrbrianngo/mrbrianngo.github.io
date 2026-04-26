@@ -155,6 +155,26 @@
       align-items: center;
       gap: 4px;
     }
+
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      background: #0a1a0a;
+      border: 1px solid #222;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .pdf-container embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-container {
+        height: 500px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -175,23 +195,14 @@
       </video>
     </div>
 
-    <div class="title" style="font-size: 16px; margin-top: 32px;">Project Files</div>
-    <div class="file-grid">
-      <a href="../Portfolio/AI-Assisted%20Anesthesia%20Dashboard/Abstract%20Poster.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Abstract Poster.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
-      
-      <a href="../Portfolio/AI-Assisted%20Anesthesia%20Dashboard/MI4%20Abstract_%20Be%20My%20Anesthesiologist_%20A%20Virtual%20Anesthesia%20Volunteer%20Network%20for%20Remote%20Care.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">MI4 Abstract.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
+    <div class="title" style="font-size: 16px; margin-top: 32px;">Abstract Poster</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/AI-Assisted%20Anesthesia%20Dashboard/Abstract%20Poster.pdf" type="application/pdf">
+    </div>
+
+    <div class="title" style="font-size: 16px; margin-top: 32px;">MI4 Abstract</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/AI-Assisted%20Anesthesia%20Dashboard/MI4%20Abstract_%20Be%20My%20Anesthesiologist_%20A%20Virtual%20Anesthesia%20Volunteer%20Network%20for%20Remote%20Care.pdf" type="application/pdf">
     </div>
   </section>
   <hr style="margin:24px 0; border-color:#222">
