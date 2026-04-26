@@ -65,6 +65,30 @@
       align-items: center;
       gap: 4px;
     }
+
+    .pdf-container {
+      width: calc(100% + 72px);
+      margin-left: -36px;
+      height: 1000px;
+      background: #0a1a0a;
+      border: 1px solid #222;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .pdf-container embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-container {
+        width: calc(100% + 72px);
+        margin-left: -36px;
+        height: 600px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -81,23 +105,7 @@
       <embed src="../Portfolio/BME%20121/BME%20121%20Project.pdf" type="application/pdf">
     </div>
 
-    <div class="file-grid">
-      <a href="../Portfolio/BME%20121/BME%20121%20Project.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Final Project.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
-      
-      <a href="../Portfolio/BME%20121/BME%20121%20Progress%20Check.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Progress Check.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
-    </div>
+
   </section>
 
   <hr style="margin:24px 0; border-color:#222">

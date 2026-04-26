@@ -28,9 +28,35 @@
       margin: 24px 0;
     }
 
-    .video-container video {
+    .video-container video,
+    .video-container iframe {
       width: 100%;
       height: 100%;
+      border: none;
+    }
+
+    .pdf-container {
+      width: calc(100% + 72px);
+      margin-left: -36px;
+      height: 1000px;
+      background: #0a1a0a;
+      border: 1px solid #222;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .pdf-container embed {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-container {
+        width: calc(100% + 72px);
+        margin-left: -36px;
+        height: 600px;
+      }
     }
 
     .file-grid {
@@ -96,34 +122,17 @@
   <section class="media-section">
     <div class="title" style="font-size: 16px;">Final Project Presentation</div>
     <div class="video-container">
-      <video controls>
-        <source src="../Portfolio/BME%20195%20(Immunoengineering)/195-Group7VideoFinal.mp4" type="video/mp4">
-      </video>
+      <iframe src="https://www.youtube.com/embed/cWoF1tLO8cE" title="Immunoengineering Final Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <div style="font-size: 10px; color: var(--text-faint); margin-top: -12px; margin-bottom: 48px;">Note: Video file size is ~1GB.</div>
 
     <div class="title" style="font-size: 16px;">Final Paper</div>
     <div class="pdf-container">
       <embed src="../Portfolio/BME%20195%20(Immunoengineering)/195%20Final%20Paper.pdf" type="application/pdf">
     </div>
 
-    <div class="title" style="font-size: 16px; margin-top: 48px;">Supplemental Materials</div>
-    <div class="file-grid">
-      <a href="../Portfolio/BME%20195%20(Immunoengineering)/195%20Final%20Paper.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Final Paper.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
-
-      <a href="../Portfolio/BME%20195%20(Immunoengineering)/Graphic%20Organizer%20grp%207.pdf" target="_blank" class="file-card">
-        <div class="file-info">
-          <div class="file-name">Graphic Organizer.pdf</div>
-          <div class="file-meta">PDF DOCUMENT</div>
-        </div>
-        <div class="download-btn">VIEW FILE ↗</div>
-      </a>
+    <div class="title" style="font-size: 16px; margin-top: 48px;">Graphic Organizer</div>
+    <div class="pdf-container">
+      <embed src="../Portfolio/BME%20195%20(Immunoengineering)/Graphic%20Organizer%20grp%207.pdf" type="application/pdf">
     </div>
   </section>
 
