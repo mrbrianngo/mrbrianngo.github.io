@@ -9,13 +9,85 @@
     :root { --text-main: #c0c0c0; --text-strong: #ffffff; --text-faint: #666666; --highlight: #ff4f00; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #000a00; color: var(--text-main); font-family: "Space Mono", monospace; text-transform: uppercase; letter-spacing: 0.12em; -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative; padding:36px; }
-    .back { margin-bottom:24px; display:inline-block; color:#ff4f00; text-decoration:none }
-    .title { font-size:20px; font-weight:700; color:#fff; margin-bottom:12px }
+
+    /* Parallax Star Background */
+    #stars, #stars2, #stars3 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: -1; }
+    #stars { width: 1px; height: 1px; background: transparent; box-shadow: 1847px 1847px #FFF, 1363px 1847px #FFF, 512px 1847px #FFF, 1451px 1847px #FFF, 1777px 1847px #FFF, 1947px 1847px #FFF, 1620px 1847px #FFF, 234px 1847px #FFF, 1234px 1847px #FFF, 1500px 1847px #FFF, 1800px 1847px #FFF, 600px 1847px #FFF, 400px 1847px #FFF, 1100px 1847px #FFF, 1950px 1847px #FFF, 1950px 456px #FFF, 1234px 789px #FFF, 234px 345px #FFF, 1500px 567px #FFF, 800px 900px #FFF, 1100px 1200px #FFF, 456px 678px #FFF, 1700px 890px #FFF, 600px 1234px #FFF, 1800px 345px #FFF, 345px 1500px #FFF, 1400px 1100px #FFF, 890px 456px #FFF, 1950px 1234px #FFF, 500px 1800px #FFF; animation: animStar 50s linear infinite; }
+    #stars2 { width: 2px; height: 2px; background: transparent; box-shadow: 1823px 1823px #FFF, 1345px 1823px #FFF, 523px 1823px #FFF, 1489px 1823px #FFF, 1756px 1823px #FFF, 1923px 1823px #FFF, 1678px 1823px #FFF, 289px 1823px #FFF, 1267px 1823px #FFF, 1534px 1823px #FFF, 1834px 1823px #FFF, 678px 1823px #FFF, 423px 1823px #FFF, 1134px 1823px #FFF, 1923px 489px #FFF, 1267px 756px #FFF, 289px 378px #FFF, 1534px 534px #FFF, 834px 867px #FFF, 1134px 1167px #FFF, 489px 645px #FFF, 1734px 923px #FFF, 678px 1267px #FFF, 1834px 378px #FFF, 378px 1534px #FFF, 1434px 1134px #FFF, 923px 423px #FFF, 1923px 1267px #FFF, 534px 1834px #FFF; animation: animStar 100s linear infinite; }
+    #stars3 { width: 3px; height: 3px; background: transparent; box-shadow: 1812px 1812px #FFF, 1334px 1812px #FFF, 534px 1812px #FFF, 1478px 1812px #FFF, 1745px 1812px #FFF, 1912px 1812px #FFF, 1689px 1812px #FFF, 301px 1812px #FFF, 1278px 1812px #FFF, 1545px 1812px #FFF, 1845px 1812px #FFF, 689px 1812px #FFF, 434px 1812px #FFF, 1145px 1812px #FFF, 1912px 501px #FFF, 1278px 745px #FFF, 301px 390px #FFF, 1545px 523px #FFF, 845px 856px #FFF, 1145px 1156px #FFF, 501px 634px #FFF, 1745px 912px #FFF, 689px 1278px #FFF, 1845px 390px #FFF, 390px 1545px #FFF, 1445px 1145px #FFF, 912px 434px #FFF, 1912px 1278px #FFF, 523px 1845px #FFF; animation: animStar 150s linear infinite; }
+    @keyframes animStar { from { transform: translateY(0px); } to { transform: translateY(-2000px); } }
+
+    a { color:#ff4f00; text-decoration:none }
+    .back { margin-bottom:24px; display:inline-block; font-weight: 700; transition: transform 0.2s ease; }
+    .back:hover { transform: translateX(-4px); }
+    
+    .title { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .description { font-size: 14px; line-height: 1.6; color: var(--text-main); margin-bottom: 32px; }
+
+    .gallery-stack { display: flex; flex-direction: column; gap: 48px; width: 100%; }
+    .gallery-item { width: 100%; border: 1px solid #222; background: #000; overflow: hidden; }
+    .gallery-item img { width: 100%; height: auto; display: block; }
+    .gallery-item embed { width: 100%; height: 900px; border: none; }
+    .item-label { font-size: 12px; color: var(--highlight); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.2em; }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 16px; }
+      .gallery-item embed { height: 500px; }
+    }
   </style>
 </head>
 <body>
+  <!-- Parallax Star Background -->
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
   <a class="back" href="../index.html">← Back</a>
+
   <div class="title">Tummy Time</div>
-  <p>Content removed at user request. Will be updated soon.</p>
+  <div class="description">
+    A specialized infant support device designed for NICU and developmental therapy. 
+    Focuses on ergonomic positioning, biocompatible materials, and clinical safety standards.
+  </div>
+
+  <section class="gallery-stack">
+    <!-- 1. Picture of actual product -->
+    <div class="stack-block">
+      <div class="item-label">01 // ACTUAL PRODUCT PHOTO</div>
+      <div class="gallery-item">
+        <img src="../Portfolio/Tummy%20Time/product.jpg" alt="Tummy Time Actual Product">
+      </div>
+    </div>
+
+    <!-- 2. Frame with foam -->
+    <div class="stack-block">
+      <div class="item-label">02 // FRAME WITH FOAM ASSEMBLY</div>
+      <div class="gallery-item">
+        <embed src="../Portfolio/Tummy%20Time/frame%20with%20foam.PDF" type="application/pdf">
+      </div>
+    </div>
+
+    <!-- 3. Foam pattern drawing v2 -->
+    <div class="stack-block">
+      <div class="item-label">03 // FOAM PATTERN DRAWING V2</div>
+      <div class="gallery-item">
+        <embed src="../Portfolio/Tummy%20Time/foam%20pattern%20drawing%20v2.PDF" type="application/pdf">
+      </div>
+    </div>
+
+    <!-- 4. Frame 3d print -->
+    <div class="stack-block">
+      <div class="item-label">04 // FRAME 3D PRINT SPECIFICATIONS</div>
+      <div class="gallery-item">
+        <embed src="../Portfolio/Tummy%20Time/frame%203d%20print.pdf" type="application/pdf">
+      </div>
+    </div>
+  </section>
+
+  <hr style="border: 0; border-top: 1px solid #222; margin: 64px 0 32px;">
+  
+  <div style="text-align: center; color: var(--text-faint); font-size: 10px; margin-bottom: 48px;">
+    &copy; 2026 Brian Ngo — Tummy Time Project Showcase
+  </div>
 </body>
 </html>
